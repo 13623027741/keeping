@@ -16,7 +16,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B190E8081D0FA4A800963035"
-               BuildableName = "keeping.app"
+               BuildableName = "KEEPING.app"
                BlueprintName = "keeping"
                ReferencedContainer = "container:keeping.xcodeproj">
             </BuildableReference>
@@ -34,7 +34,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B190E8081D0FA4A800963035"
-            BuildableName = "keeping.app"
+            BuildableName = "KEEPING.app"
             BlueprintName = "keeping"
             ReferencedContainer = "container:keeping.xcodeproj">
          </BuildableReference>
@@ -57,7 +57,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B190E8081D0FA4A800963035"
-            BuildableName = "keeping.app"
+            BuildableName = "KEEPING.app"
             BlueprintName = "keeping"
             ReferencedContainer = "container:keeping.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B190E8081D0FA4A800963035"
-            BuildableName = "keeping.app"
+            BuildableName = "KEEPING.app"
             BlueprintName = "keeping"
             ReferencedContainer = "container:keeping.xcodeproj">
          </BuildableReference>
