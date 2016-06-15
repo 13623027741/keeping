@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "LoginController.h"
 #import "SignUpController.h"
+#import "MainController.h"
+#import "HomeController.h"
 @interface AppDelegate ()
 
 @end
@@ -21,8 +23,8 @@
     
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
 //    self.window.rootViewController = [[LoginController alloc]init];
-    SignUpController* signUp = [[UIStoryboard storyboardWithName:@"SignUp" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"signup"];
-    self.window.rootViewController = signUp;
+    MainController* mainVC = [[MainController alloc]initWithRootViewController:[[HomeController alloc]init]];
+    self.window.rootViewController = mainVC;
     [self.window makeKeyAndVisible];
     
     if (![[NSUserDefaults standardUserDefaults]objectForKey:@"userName"]) {

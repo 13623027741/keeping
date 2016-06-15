@@ -13,7 +13,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     
-    
+    self.textField.font = kFONT(17);
     
 }
 

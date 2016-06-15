@@ -18,6 +18,11 @@
 		B190E8691D10F44900963035 /* SignUpController.m in Sources */ = {isa = PBXBuildFile; fileRef = B190E8681D10F44900963035 /* SignUpController.m */; };
 		B190E86D1D11071B00963035 /* SignUpCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B190E86B1D11071B00963035 /* SignUpCell.m */; };
 		B190E86E1D11071B00963035 /* SignUpCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B190E86C1D11071B00963035 /* SignUpCell.xib */; };
+		B190E8731D11317E00963035 /* KSDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = B190E8701D11317E00963035 /* KSDatePicker.m */; };
+		B190E8741D11317E00963035 /* KSDatePickerAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = B190E8721D11317E00963035 /* KSDatePickerAppearance.m */; };
+		B190E8771D114BA000963035 /* HomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = B190E8761D114BA000963035 /* HomeController.m */; };
+		B190E87A1D114DE900963035 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = B190E8791D114DE900963035 /* MainController.m */; };
+		B190E87D1D1158A200963035 /* RoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B190E87C1D1158A200963035 /* RoundButton.m */; };
 		CF163140D71C74CE6CA529AA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29617A2C6FABF45BA840B4C8 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +48,16 @@
 		B190E86A1D11071B00963035 /* SignUpCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpCell.h; sourceTree = "<group>"; };
 		B190E86B1D11071B00963035 /* SignUpCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpCell.m; sourceTree = "<group>"; };
 		B190E86C1D11071B00963035 /* SignUpCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpCell.xib; sourceTree = "<group>"; };
+		B190E86F1D11317E00963035 /* KSDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSDatePicker.h; sourceTree = "<group>"; };
+		B190E8701D11317E00963035 /* KSDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSDatePicker.m; sourceTree = "<group>"; };
+		B190E8711D11317E00963035 /* KSDatePickerAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSDatePickerAppearance.h; sourceTree = "<group>"; };
+		B190E8721D11317E00963035 /* KSDatePickerAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSDatePickerAppearance.m; sourceTree = "<group>"; };
+		B190E8751D114BA000963035 /* HomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeController.h; sourceTree = "<group>"; };
+		B190E8761D114BA000963035 /* HomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeController.m; sourceTree = "<group>"; };
+		B190E8781D114DE900963035 /* MainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainController.h; sourceTree = "<group>"; };
+		B190E8791D114DE900963035 /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
+		B190E87B1D1158A200963035 /* RoundButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundButton.h; sourceTree = "<group>"; };
+		B190E87C1D1158A200963035 /* RoundButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +180,8 @@
 		B190E8291D0FA6A200963035 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B190E8751D114BA000963035 /* HomeController.h */,
+				B190E8761D114BA000963035 /* HomeController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -179,6 +196,8 @@
 		B190E82B1D0FA6A200963035 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B190E87B1D1158A200963035 /* RoundButton.h */,
+				B190E87C1D1158A200963035 /* RoundButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -196,6 +215,8 @@
 		B190E82D1D0FA6A200963035 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B190E8781D114DE900963035 /* MainController.h */,
+				B190E8791D114DE900963035 /* MainController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -383,6 +404,10 @@
 				B190E86A1D11071B00963035 /* SignUpCell.h */,
 				B190E86B1D11071B00963035 /* SignUpCell.m */,
 				B190E86C1D11071B00963035 /* SignUpCell.xib */,
+				B190E86F1D11317E00963035 /* KSDatePicker.h */,
+				B190E8701D11317E00963035 /* KSDatePicker.m */,
+				B190E8711D11317E00963035 /* KSDatePickerAppearance.h */,
+				B190E8721D11317E00963035 /* KSDatePickerAppearance.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -628,6 +653,11 @@
 				B190E85E1D0FDAB200963035 /* WSPaymentCircleView.m in Sources */,
 				B190E8691D10F44900963035 /* SignUpController.m in Sources */,
 				B190E8521D0FA6A200963035 /* AppDelegate.m in Sources */,
+				B190E8741D11317E00963035 /* KSDatePickerAppearance.m in Sources */,
+				B190E8731D11317E00963035 /* KSDatePicker.m in Sources */,
+				B190E87D1D1158A200963035 /* RoundButton.m in Sources */,
+				B190E8771D114BA000963035 /* HomeController.m in Sources */,
+				B190E87A1D114DE900963035 /* MainController.m in Sources */,
 				B190E85B1D0FA7D500963035 /* LoginController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -739,7 +769,7 @@
 				GCC_PREFIX_HEADER = keeping/Classes/Other/PrefixHeader.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/keeping/Classes/Other/Info.plist";
 				INFOPLIST_PREFIX_HEADER = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.e6878.keeping;
 				PRODUCT_NAME = KEEPING;
@@ -758,7 +788,7 @@
 				GCC_PREFIX_HEADER = keeping/Classes/Other/PrefixHeader.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/keeping/Classes/Other/Info.plist";
 				INFOPLIST_PREFIX_HEADER = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.e6878.keeping;
 				PRODUCT_NAME = KEEPING;

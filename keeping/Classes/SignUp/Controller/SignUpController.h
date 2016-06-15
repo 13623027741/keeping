@@ -18,4 +18,7 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *checkButton;
 
+
+@property (weak, nonatomic) IBOutlet UIButton *signUpButton;
+
 @end

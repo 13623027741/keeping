@@ -12,7 +12,7 @@
 #import "MBProgressHUD.h"
 #import "WSPaymentCircleView.h"
 #import "SignUpController.h"
-
+#import "HomeController.h"
 #define SCREEN_SIZE [UIScreen mainScreen].bounds.size
 
 @interface LoginController ()<UITextFieldDelegate>
@@ -327,6 +327,7 @@
             NSLog(@"登陆成功");
             self.iconView.alpha = 0;
             [self.circleView loadStatus:WSLoadStatusSuccess];
+            [self presentViewController:[[HomeController alloc]init] animated:YES completion:nil];
         }else{
             NSLog(@"登陆失败");
             self.iconView.alpha = 0;
@@ -340,8 +341,8 @@
     [[self.signUp rac_signalForControlEvents:UIControlEventTouchUpInside]
     subscribeNext:^(id x) {
         NSLog(@"signUp....");
-        
-//        [self presentViewController:signUp animated:YES completion:nil];
+        SignUpController* signUp = [[UIStoryboard storyboardWithName:@"SignUp" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"signup"];
+        [self presentViewController:signUp animated:YES completion:nil];
     }];
     
     [[RACSignal combineLatest:@[self.userName.rac_textSignal,self.passWord.rac_textSignal] reduce:^id{

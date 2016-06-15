@@ -20,24 +20,14 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ugu-ZF-THE">
                                 <rect key="frame" x="16" y="30" width="20" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="d2c-6I-I19"/>
-                                    <constraint firstAttribute="width" constant="20" id="qmH-IB-0yj"/>
+                                    <constraint firstAttribute="width" constant="20" id="vt8-Ix-vMj"/>
+                                    <constraint firstAttribute="height" constant="20" id="x4b-3Z-RND"/>
                                 </constraints>
                                 <state key="normal" image="close"/>
                                 <connections>
                                     <action selector="closeButton" destination="Znd-yu-FgL" eventType="touchUpInside" id="XqM-e6-Qks"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fff-Fn-9R8">
-                                <rect key="frame" x="50" y="30" width="100" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="B50-zw-zZX"/>
-                                    <constraint firstAttribute="width" constant="100" id="YGC-Px-YZF"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header_background" translatesAutoresizingMaskIntoConstraints="NO" id="AUM-xD-hcH">
                                 <rect key="frame" x="-4" y="60" width="328" height="183"/>
                                 <constraints>
@@ -70,27 +60,38 @@
                                     <constraint firstAttribute="width" constant="30" id="Hsr-df-vnR"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1IK-La-co8">
+                                <rect key="frame" x="46" y="30" width="100" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="7Wc-L8-oNn"/>
+                                    <constraint firstAttribute="height" constant="20" id="Xgy-Jz-o7k"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="2kH-26-O5I" firstAttribute="top" secondItem="tef-7N-s4s" secondAttribute="bottom" constant="63" id="0U9-uF-jdT"/>
                             <constraint firstItem="FMb-Q0-Zyj" firstAttribute="top" secondItem="FGh-4L-yEc" secondAttribute="bottom" constant="15" id="0YO-rG-ZTc"/>
-                            <constraint firstItem="Ugu-ZF-THE" firstAttribute="leading" secondItem="iLq-WU-CCk" secondAttribute="leadingMargin" id="40e-tQ-ESW"/>
                             <constraint firstItem="FMb-Q0-Zyj" firstAttribute="top" secondItem="bbR-3R-RQS" secondAttribute="bottom" id="5j5-dT-Ugg"/>
-                            <constraint firstItem="Fff-Fn-9R8" firstAttribute="leading" secondItem="Ugu-ZF-THE" secondAttribute="trailing" constant="14" id="Dz4-vQ-3wL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bbR-3R-RQS" secondAttribute="trailing" constant="-20" id="FBa-76-guu"/>
-                            <constraint firstItem="Fff-Fn-9R8" firstAttribute="top" secondItem="e83-8q-erl" secondAttribute="bottom" constant="10" id="J0r-Vc-csm"/>
-                            <constraint firstItem="AUM-xD-hcH" firstAttribute="top" secondItem="Fff-Fn-9R8" secondAttribute="bottom" constant="10" id="O5Y-Tx-Bgb"/>
+                            <constraint firstItem="1IK-La-co8" firstAttribute="leading" secondItem="Ugu-ZF-THE" secondAttribute="trailing" constant="10" id="O1v-X7-9zN"/>
                             <constraint firstItem="FGh-4L-yEc" firstAttribute="centerX" secondItem="iLq-WU-CCk" secondAttribute="centerX" id="OS2-h6-BI6"/>
                             <constraint firstItem="2kH-26-O5I" firstAttribute="top" secondItem="AUM-xD-hcH" secondAttribute="bottom" constant="10" id="RUm-Up-ddS"/>
-                            <constraint firstItem="tef-7N-s4s" firstAttribute="top" secondItem="Fff-Fn-9R8" secondAttribute="bottom" constant="40" id="ShD-lH-WfY"/>
+                            <constraint firstItem="Ugu-ZF-THE" firstAttribute="leading" secondItem="iLq-WU-CCk" secondAttribute="leadingMargin" id="Sfw-DU-veY"/>
+                            <constraint firstItem="1IK-La-co8" firstAttribute="top" secondItem="e83-8q-erl" secondAttribute="bottom" constant="10" id="WBW-OE-JQ7"/>
                             <constraint firstItem="bbR-3R-RQS" firstAttribute="leading" secondItem="iLq-WU-CCk" secondAttribute="leadingMargin" constant="-20" id="aTR-bN-G34"/>
                             <constraint firstItem="AUM-xD-hcH" firstAttribute="leading" secondItem="iLq-WU-CCk" secondAttribute="leadingMargin" constant="-20" id="bkg-l5-mbk"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2kH-26-O5I" secondAttribute="trailing" constant="-20" id="dYW-Qe-9BN"/>
+                            <constraint firstItem="tef-7N-s4s" firstAttribute="top" secondItem="1IK-La-co8" secondAttribute="bottom" constant="40" id="kei-zv-J0u"/>
+                            <constraint firstItem="Ugu-ZF-THE" firstAttribute="top" secondItem="e83-8q-erl" secondAttribute="bottom" constant="10" id="nHE-mq-7iM"/>
                             <constraint firstItem="2kH-26-O5I" firstAttribute="leading" secondItem="iLq-WU-CCk" secondAttribute="leadingMargin" constant="-20" id="oAq-xq-OtU"/>
                             <constraint firstItem="tef-7N-s4s" firstAttribute="centerX" secondItem="iLq-WU-CCk" secondAttribute="centerX" id="pGY-6L-d81"/>
                             <constraint firstItem="bbR-3R-RQS" firstAttribute="top" secondItem="2kH-26-O5I" secondAttribute="bottom" id="puQ-tF-MeF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="AUM-xD-hcH" secondAttribute="trailing" constant="-20" id="v1L-BT-rmf"/>
-                            <constraint firstItem="Ugu-ZF-THE" firstAttribute="top" secondItem="e83-8q-erl" secondAttribute="bottom" constant="10" id="v3f-yO-395"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -98,6 +99,7 @@
                         <outlet property="addPhoto" destination="tef-7N-s4s" id="EEC-8a-CF3"/>
                         <outlet property="checkButton" destination="bbR-3R-RQS" id="fUm-xH-NkP"/>
                         <outlet property="closeButton" destination="Ugu-ZF-THE" id="tTy-I7-aNO"/>
+                        <outlet property="signUpButton" destination="1IK-La-co8" id="WhF-iQ-KJB"/>
                         <outlet property="tableView" destination="2kH-26-O5I" id="Ldb-nm-9Vd"/>
                     </connections>
                 </viewController>
