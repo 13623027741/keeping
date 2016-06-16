@@ -18,3 +18,5 @@
 #define kFONT(s) [UIFont fontWithName:@"Avenir-Book" size:s];
 #import "ReactiveCocoa.h"
 #import "Masonry.h"
+
+#define kWHITE_COLOR [UIColor whiteColor]

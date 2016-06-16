@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10109" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10083"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="HomeDateView">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TMr-Fd-DGA">
+                    <rect key="frame" x="25" y="25" width="150" height="150"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MBI-s2-0iE">
+                            <rect key="frame" x="50" y="50" width="50" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="CjZ-i8-sX0"/>
+                                <constraint firstAttribute="width" constant="50" id="cHY-9g-pVw"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TUE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhj-RD-Ai6">
+                            <rect key="frame" x="50" y="110" width="50" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="JrR-Dv-wv3"/>
+                                <constraint firstAttribute="height" constant="20" id="aXc-ac-Bd3"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="0.14430176880000001" blue="0.088745710850000006" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="150" id="ClL-qf-Ra2"/>
+                        <constraint firstItem="fhj-RD-Ai6" firstAttribute="top" secondItem="MBI-s2-0iE" secondAttribute="bottom" constant="10" id="Y6s-Jd-sLy"/>
+                        <constraint firstItem="fhj-RD-Ai6" firstAttribute="centerX" secondItem="TMr-Fd-DGA" secondAttribute="centerX" id="d7F-xK-BXu"/>
+                        <constraint firstAttribute="height" constant="150" id="gNn-h5-fbb"/>
+                        <constraint firstItem="MBI-s2-0iE" firstAttribute="centerX" secondItem="TMr-Fd-DGA" secondAttribute="centerX" id="rBF-XN-rKU"/>
+                        <constraint firstItem="MBI-s2-0iE" firstAttribute="centerY" secondItem="TMr-Fd-DGA" secondAttribute="centerY" id="wyr-ti-Th7"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CMH-s0-683">
+                    <rect key="frame" x="153" y="52" width="30" height="30"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6WS-gx-ZtX">
+                            <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="AbB-y2-s4J"/>
+                        <constraint firstAttribute="width" constant="30" id="NZk-ee-afO"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="TMr-Fd-DGA" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="NcB-FK-2a9"/>
+                <constraint firstItem="CMH-s0-683" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="153" id="VrG-j6-q7F"/>
+                <constraint firstItem="TMr-Fd-DGA" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="hWo-7W-LIE"/>
+                <constraint firstItem="CMH-s0-683" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="52" id="n3b-qR-VHH"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="dateLabel" destination="MBI-s2-0iE" id="wOL-kY-Rsh"/>
+                <outlet property="dateView" destination="TMr-Fd-DGA" id="7t0-yA-3rE"/>
+                <outlet property="timeLabel" destination="6WS-gx-ZtX" id="5Rc-hc-LhC"/>
+                <outlet property="timeView" destination="CMH-s0-683" id="lWC-B5-kpL"/>
+                <outlet property="week" destination="fhj-RD-Ai6" id="gTF-Dd-hyb"/>
+            </connections>
+            <point key="canvasLocation" x="844" y="156"/>
+        </view>
+    </objects>
+</document>
