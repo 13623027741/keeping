@@ -27,6 +27,9 @@
 		B190E8821D12480700963035 /* HomeDateView.m in Sources */ = {isa = PBXBuildFile; fileRef = B190E8811D12480700963035 /* HomeDateView.m */; };
 		B190E8851D125E0800963035 /* MenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = B190E8841D125E0800963035 /* MenuController.m */; };
 		B190E8891D125E9400963035 /* MenuController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B190E8881D125E9400963035 /* MenuController.xib */; };
+		B190E88C1D128A7F00963035 /* GroupsController.m in Sources */ = {isa = PBXBuildFile; fileRef = B190E88B1D128A7F00963035 /* GroupsController.m */; };
+		B190E8901D12936600963035 /* GroupsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B190E88E1D12936600963035 /* GroupsCell.m */; };
+		B190E8911D12936600963035 /* GroupsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B190E88F1D12936600963035 /* GroupsCell.xib */; };
 		CF163140D71C74CE6CA529AA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29617A2C6FABF45BA840B4C8 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +71,11 @@
 		B190E8831D125E0800963035 /* MenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuController.h; sourceTree = "<group>"; };
 		B190E8841D125E0800963035 /* MenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuController.m; sourceTree = "<group>"; };
 		B190E8881D125E9400963035 /* MenuController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuController.xib; sourceTree = "<group>"; };
+		B190E88A1D128A7F00963035 /* GroupsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupsController.h; sourceTree = "<group>"; };
+		B190E88B1D128A7F00963035 /* GroupsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupsController.m; sourceTree = "<group>"; };
+		B190E88D1D12936600963035 /* GroupsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupsCell.h; sourceTree = "<group>"; };
+		B190E88E1D12936600963035 /* GroupsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupsCell.m; sourceTree = "<group>"; };
+		B190E88F1D12936600963035 /* GroupsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupsCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +167,8 @@
 		B190E8251D0FA6A200963035 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B190E88A1D128A7F00963035 /* GroupsController.h */,
+				B190E88B1D128A7F00963035 /* GroupsController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -173,6 +183,9 @@
 		B190E8271D0FA6A200963035 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B190E88D1D12936600963035 /* GroupsCell.h */,
+				B190E88E1D12936600963035 /* GroupsCell.m */,
+				B190E88F1D12936600963035 /* GroupsCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -608,6 +621,7 @@
 				B190E86E1D11071B00963035 /* SignUpCell.xib in Resources */,
 				B190E8661D10F41E00963035 /* SignUp.storyboard in Resources */,
 				B190E8531D0FA6A200963035 /* Info.plist in Resources */,
+				B190E8911D12936600963035 /* GroupsCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -667,12 +681,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B190E8541D0FA6A200963035 /* main.m in Sources */,
+				B190E88C1D128A7F00963035 /* GroupsController.m in Sources */,
 				B190E86D1D11071B00963035 /* SignUpCell.m in Sources */,
 				B190E85E1D0FDAB200963035 /* WSPaymentCircleView.m in Sources */,
 				B190E8691D10F44900963035 /* SignUpController.m in Sources */,
 				B190E8521D0FA6A200963035 /* AppDelegate.m in Sources */,
 				B190E8741D11317E00963035 /* KSDatePickerAppearance.m in Sources */,
 				B190E8731D11317E00963035 /* KSDatePicker.m in Sources */,
+				B190E8901D12936600963035 /* GroupsCell.m in Sources */,
 				B190E8821D12480700963035 /* HomeDateView.m in Sources */,
 				B190E8851D125E0800963035 /* MenuController.m in Sources */,
 				B190E87D1D1158A200963035 /* RoundButton.m in Sources */,

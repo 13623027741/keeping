@@ -11,6 +11,7 @@
 #import "SignUpController.h"
 #import "MainController.h"
 #import "HomeController.h"
+#import "GroupsController.h"
 @interface AppDelegate ()
 
 @end
@@ -22,9 +23,7 @@
     
     
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-//    self.window.rootViewController = [[LoginController alloc]init];
-    MainController* mainVC = [[MainController alloc]initWithRootViewController:[[HomeController alloc]init]];
-    self.window.rootViewController = mainVC;
+    self.window.rootViewController = [[GroupsController alloc]init];
     [self.window makeKeyAndVisible];
     
     if (![[NSUserDefaults standardUserDefaults]objectForKey:@"userName"]) {
