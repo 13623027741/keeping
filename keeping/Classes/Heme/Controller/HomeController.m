@@ -9,7 +9,7 @@
 #import "HomeController.h"
 #import "RoundButton.h"
 #import "HomeDateView.h"
-
+#import "MenuController.h"
 @interface HomeController ()
 
 @property(nonatomic,strong)UIImageView* backgroundImageView;
@@ -155,9 +155,15 @@
 -(void)addTarger{
     [[self.leftButton rac_signalForControlEvents:UIControlEventTouchUpInside]
     subscribeNext:^(id x) {
-        
+        NSLog(@"---");
+        MenuController* menu = [[[NSBundle mainBundle]loadNibNamed:@"MenuController" owner:nil options:nil]lastObject];
+        [self.view addSubview:menu];
     }];
 }
+
+//-(UIStatusBarStyle)preferredStatusBarStyle{
+//    return UIStatusBarStyleLightContent;
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
