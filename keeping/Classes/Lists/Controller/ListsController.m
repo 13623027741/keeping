@@ -204,7 +204,7 @@ static NSString* LCell = @"cell";
         cell.massage.text = @"abdlfldnldsjfdnfdlfnldnfld    dfhdhfldfhlsdfhldhfldshf fdhfldshfldhflsdhfe hfdhfdl";
     }
     
-    cell.tag = indexPath.row + 1000;
+    cell.tag = indexPath.row;
     [[cell.selectedButton rac_signalForControlEvents:UIControlEventTouchUpInside]
     subscribeNext:^(UIButton* but) {
         NSLog(@"");
