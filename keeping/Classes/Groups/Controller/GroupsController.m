@@ -8,6 +8,7 @@
 
 #import "GroupsController.h"
 #import "GroupsCell.h"
+#import "MenuController.h"
 @interface GroupsController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property(nonatomic,strong)UITableView* tableView;
@@ -20,6 +21,8 @@
 
 @property(nonatomic,strong)UIButton* searchButton;
 
+@property(nonatomic,strong)MenuController* menu;
+
 @end
 static NSString* gCell = @"cell";
 @implementation GroupsController
@@ -31,10 +34,12 @@ static NSString* gCell = @"cell";
     
     [self addSubView];
     [self addAutoLayout];
+    [self addTarger];
     
 }
 
 -(void)addSubView{
+    
     self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, 0, 0) style:UITableViewStylePlain];
     self.tableView.delegate = self;
     self.tableView.backgroundColor = [UIColor clearColor];
@@ -59,6 +64,11 @@ static NSString* gCell = @"cell";
     self.searchButton = [[UIButton alloc]init];
     [self.searchButton setImage:[UIImage imageNamed:@"search"] forState:UIControlStateNormal];
     [self.view addSubview:self.searchButton];
+    
+    
+    self.menu = [[[NSBundle mainBundle]loadNibNamed:@"MenuController" owner:nil options:nil]lastObject];
+    self.menu.alpha = 0;
+    [self.view addSubview:self.menu];
 }
 
 -(void)addAutoLayout{
@@ -92,6 +102,24 @@ static NSString* gCell = @"cell";
     }];
 }
 
+-(void)addTarger{
+    [[self.menuButton rac_signalForControlEvents:UIControlEventTouchUpInside]
+    subscribeNext:^(id x) {
+        NSLog(@"弹出菜单");
+        self.menu.alpha = 1;
+    }];
+    
+    [[self.addButton rac_signalForControlEvents:UIControlEventTouchUpInside]
+    subscribeNext:^(id x) {
+        NSLog(@"添加一项提醒");
+    }];
+    
+    [[self.searchButton rac_signalForControlEvents:UIControlEventTouchUpInside]
+    subscribeNext:^(id x) {
+        NSLog(@"查找");
+    }];
+}
+
 #pragma mark - 代理
 
 
@@ -100,7 +128,7 @@ static NSString* gCell = @"cell";
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 200;
+    return 150;
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -110,7 +138,7 @@ static NSString* gCell = @"cell";
         cell = [[[NSBundle mainBundle]loadNibNamed:@"GroupsCell" owner:nil options:nil]lastObject];
     }
     
-    
+//    cell.title.text = @"Food";
     
     return cell;
 }
@@ -120,6 +148,8 @@ static NSString* gCell = @"cell";
     
     
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

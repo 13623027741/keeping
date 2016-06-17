@@ -26,7 +26,7 @@
     [[self.closeButton rac_signalForControlEvents:UIControlEventTouchUpInside]
     subscribeNext:^(id x) {
         NSLog(@"返回");
-        self.frame = CGRectMake(0, 0, 0, 0);
+//        self.frame = CGRectMake(0, 0, 0, 0);
         self.alpha = 0;
     }];
     
