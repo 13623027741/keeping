@@ -84,7 +84,8 @@ static NSString* LCell = @"cell";
     self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, 0, 0) style:UITableViewStylePlain];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:LCell];
+    [self.tableView registerNib:[UINib nibWithNibName:@"ListsCell" bundle:nil] forCellReuseIdentifier:LCell];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:self.tableView];
     
     self.menu = [[[NSBundle mainBundle]loadNibNamed:@"MenuController" owner:nil options:nil]lastObject];
@@ -162,16 +163,22 @@ static NSString* LCell = @"cell";
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 60;
+    return 80;
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     ListsCell* cell = [tableView dequeueReusableCellWithIdentifier:LCell forIndexPath:indexPath];
     if (!cell) {
         cell = [[[NSBundle mainBundle]loadNibNamed:@"ListsCell" owner:nil options:nil]lastObject];
+        
+    }
+    cell.massage.text = @"Design new icons";
+    if (indexPath.row == 2) {
+        [cell.selectedButton setImage:[UIImage imageNamed:@"sele_background"] forState:UIControlStateNormal];
+        cell.massage.text = @"abdlfldnldsjfdnfdlfnldnfld    dfhdhfldfhlsdfhldhfldshf fdhfldshfldhflsdhfe hfdhfdl";
     }
     
-    cell.textLabel.text = @"111";
+    
     
     return cell;
 }
