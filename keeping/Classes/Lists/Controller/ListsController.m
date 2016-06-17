@@ -41,6 +41,8 @@ static NSString* LCell = @"cell";
     [self addSubView];
     
     [self addAutolayout];
+    
+    [self addTarger];
 }
 
 -(void)addSubView{
@@ -156,6 +158,30 @@ static NSString* LCell = @"cell";
     }];
 }
 
+
+-(void)addTarger{
+    [[self.menuButton rac_signalForControlEvents:UIControlEventTouchUpInside]
+    subscribeNext:^(id x) {
+        NSLog(@"%s---调出菜单",__func__);
+        self.menu.alpha = 1;
+    }];
+    
+    [[self.shareButton rac_signalForControlEvents:UIControlEventTouchUpInside]
+    subscribeNext:^(id x) {
+        NSLog(@"分享");
+    }];
+    
+    [[self.addButton rac_signalForControlEvents:UIControlEventTouchUpInside]
+    subscribeNext:^(id x) {
+        NSLog(@"添加");
+    }];
+    
+    [[self.searchButton rac_signalForControlEvents:UIControlEventTouchUpInside]
+    subscribeNext:^(id x) {
+        NSLog(@"查找");
+    }];
+}
+
 #pragma mark - 代理
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -178,7 +204,11 @@ static NSString* LCell = @"cell";
         cell.massage.text = @"abdlfldnldsjfdnfdlfnldnfld    dfhdhfldfhlsdfhldhfldshf fdhfldshfldhflsdhfe hfdhfdl";
     }
     
-    
+    cell.tag = indexPath.row + 1000;
+    [[cell.selectedButton rac_signalForControlEvents:UIControlEventTouchUpInside]
+    subscribeNext:^(UIButton* but) {
+        NSLog(@"");
+    }];
     
     return cell;
 }
