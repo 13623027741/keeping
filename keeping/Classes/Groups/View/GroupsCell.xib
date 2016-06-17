@@ -53,7 +53,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="imageView" destination="rSO-JY-o0t" id="EQ5-8c-pY1"/>
+                <outlet property="imgView" destination="rSO-JY-o0t" id="a4z-Uc-Di4"/>
                 <outlet property="massage" destination="01f-Kx-bcf" id="yG7-VD-Yaw"/>
                 <outlet property="title" destination="NQn-lV-jR6" id="Lwu-rI-N9f"/>
             </connections>

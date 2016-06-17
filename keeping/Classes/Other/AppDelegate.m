@@ -7,11 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "LoginController.h"
-#import "SignUpController.h"
-#import "MainController.h"
-#import "HomeController.h"
-#import "GroupsController.h"
+#import "ListsController.h"
 @interface AppDelegate ()
 
 @end
@@ -23,7 +19,8 @@
     
     
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.rootViewController = [[GroupsController alloc]init];
+    self.window.rootViewController = [[ListsController alloc]init];
+    self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
     if (![[NSUserDefaults standardUserDefaults]objectForKey:@"userName"]) {
