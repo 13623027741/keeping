@@ -38,18 +38,18 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vacation" translatesAutoresizingMaskIntoConstraints="NO" id="rSO-JY-o0t">
                         <rect key="frame" x="220" y="0.0" width="100" height="149.5"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="100" id="S5B-Ig-wsA"/>
+                            <constraint firstAttribute="width" constant="100" id="U6n-m0-P9v"/>
                         </constraints>
                     </imageView>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="bottomMargin" secondItem="rSO-JY-o0t" secondAttribute="bottom" constant="-8" id="02E-fZ-GlW"/>
                     <constraint firstItem="01f-Kx-bcf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="20" id="4BB-JZ-GnF"/>
                     <constraint firstItem="01f-Kx-bcf" firstAttribute="top" secondItem="NQn-lV-jR6" secondAttribute="bottom" constant="10" id="BAd-vN-d9Z"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="rSO-JY-o0t" secondAttribute="bottom" constant="-8" id="I6O-zi-8b1"/>
-                    <constraint firstItem="rSO-JY-o0t" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="J0M-uX-Ln9"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="rSO-JY-o0t" secondAttribute="trailing" constant="-8" id="JCM-Xo-gYm"/>
                     <constraint firstItem="NQn-lV-jR6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="20" id="LnS-de-WyW"/>
+                    <constraint firstItem="rSO-JY-o0t" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="WjA-oO-rDy"/>
                     <constraint firstItem="NQn-lV-jR6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="20" id="pFJ-m0-Kxh"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="rSO-JY-o0t" secondAttribute="trailing" constant="-8" id="vtb-QR-p6e"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
