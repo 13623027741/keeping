@@ -36,6 +36,11 @@
 		B190E8A81D13A2E300963035 /* ListsController.m in Sources */ = {isa = PBXBuildFile; fileRef = B190E8A71D13A2E300963035 /* ListsController.m */; };
 		B190E8AC1D13B2A700963035 /* ListsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B190E8AA1D13B2A700963035 /* ListsCell.m */; };
 		B190E8AD1D13B2A700963035 /* ListsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B190E8AB1D13B2A700963035 /* ListsCell.xib */; };
+		B190E8B01D13EE5D00963035 /* OverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B190E8AF1D13EE5D00963035 /* OverViewController.m */; };
+		B190E8B41D13EE7500963035 /* OverViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B190E8B21D13EE7500963035 /* OverViewCell.m */; };
+		B190E8B51D13EE7500963035 /* OverViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B190E8B31D13EE7500963035 /* OverViewCell.xib */; };
+		B190E8B81D13F42000963035 /* nextView.m in Sources */ = {isa = PBXBuildFile; fileRef = B190E8B71D13F42000963035 /* nextView.m */; };
+		B190E8BB1D13F49100963035 /* CutemView.m in Sources */ = {isa = PBXBuildFile; fileRef = B190E8BA1D13F49100963035 /* CutemView.m */; };
 		CF163140D71C74CE6CA529AA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29617A2C6FABF45BA840B4C8 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -92,6 +97,15 @@
 		B190E8A91D13B2A700963035 /* ListsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListsCell.h; sourceTree = "<group>"; };
 		B190E8AA1D13B2A700963035 /* ListsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListsCell.m; sourceTree = "<group>"; };
 		B190E8AB1D13B2A700963035 /* ListsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListsCell.xib; sourceTree = "<group>"; };
+		B190E8AE1D13EE5D00963035 /* OverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverViewController.h; sourceTree = "<group>"; };
+		B190E8AF1D13EE5D00963035 /* OverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverViewController.m; sourceTree = "<group>"; };
+		B190E8B11D13EE7500963035 /* OverViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverViewCell.h; sourceTree = "<group>"; };
+		B190E8B21D13EE7500963035 /* OverViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverViewCell.m; sourceTree = "<group>"; };
+		B190E8B31D13EE7500963035 /* OverViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OverViewCell.xib; sourceTree = "<group>"; };
+		B190E8B61D13F42000963035 /* nextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nextView.h; sourceTree = "<group>"; };
+		B190E8B71D13F42000963035 /* nextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = nextView.m; sourceTree = "<group>"; };
+		B190E8B91D13F49100963035 /* CutemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CutemView.h; sourceTree = "<group>"; };
+		B190E8BA1D13F49100963035 /* CutemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CutemView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -338,6 +352,8 @@
 		B190E83A1D0FA6A200963035 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B190E8AE1D13EE5D00963035 /* OverViewController.h */,
+				B190E8AF1D13EE5D00963035 /* OverViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -352,6 +368,13 @@
 		B190E83C1D0FA6A200963035 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B190E8B11D13EE7500963035 /* OverViewCell.h */,
+				B190E8B21D13EE7500963035 /* OverViewCell.m */,
+				B190E8B31D13EE7500963035 /* OverViewCell.xib */,
+				B190E8B61D13F42000963035 /* nextView.h */,
+				B190E8B71D13F42000963035 /* nextView.m */,
+				B190E8B91D13F49100963035 /* CutemView.h */,
+				B190E8BA1D13F49100963035 /* CutemView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -709,6 +732,7 @@
 				B190E8891D125E9400963035 /* MenuController.xib in Resources */,
 				B190E87F1D1247E500963035 /* HomeDateView.xib in Resources */,
 				B190E8191D0FA4A800963035 /* Assets.xcassets in Resources */,
+				B190E8B51D13EE7500963035 /* OverViewCell.xib in Resources */,
 				B190E86E1D11071B00963035 /* SignUpCell.xib in Resources */,
 				B190E8661D10F41E00963035 /* SignUp.storyboard in Resources */,
 				B190E8AD1D13B2A700963035 /* ListsCell.xib in Resources */,
@@ -778,6 +802,7 @@
 				B190E8A81D13A2E300963035 /* ListsController.m in Sources */,
 				B190E86D1D11071B00963035 /* SignUpCell.m in Sources */,
 				B190E85E1D0FDAB200963035 /* WSPaymentCircleView.m in Sources */,
+				B190E8B01D13EE5D00963035 /* OverViewController.m in Sources */,
 				B190E8691D10F44900963035 /* SignUpController.m in Sources */,
 				B190E8981D12AAD000963035 /* CreateController.m in Sources */,
 				B190E8AC1D13B2A700963035 /* ListsCell.m in Sources */,
@@ -786,7 +811,10 @@
 				B190E8731D11317E00963035 /* KSDatePicker.m in Sources */,
 				B190E8901D12936600963035 /* GroupsCell.m in Sources */,
 				B190E8821D12480700963035 /* HomeDateView.m in Sources */,
+				B190E8B41D13EE7500963035 /* OverViewCell.m in Sources */,
 				B190E8851D125E0800963035 /* MenuController.m in Sources */,
+				B190E8BB1D13F49100963035 /* CutemView.m in Sources */,
+				B190E8B81D13F42000963035 /* nextView.m in Sources */,
 				B190E87D1D1158A200963035 /* RoundButton.m in Sources */,
 				B190E8771D114BA000963035 /* HomeController.m in Sources */,
 				B190E87A1D114DE900963035 /* MainController.m in Sources */,
