@@ -25,13 +25,15 @@
 
 -(void)addItem{
     
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"active"] style:UIBarButtonItemStyleDone target:self action:@selector(openMenu)];
+    UIButton* button = [[UIButton alloc]init];
+    [button setImage:[UIImage imageNamed:@"menu"] forState:UIControlStateNormal];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"acive"]
-                                                                              style:UIBarButtonItemStylePlain
-                                                                             target:self
-                                                                             action:@selector(openMenu)];
-
+    [self.view addSubview:button];
+    
+    [button mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(@30);
+        make.left.width.height.mas_equalTo(@20);
+    }];
 }
 
 -(void)openMenu{

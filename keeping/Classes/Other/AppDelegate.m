@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-#import "ListsController.h"
+#import "OverViewController.h"
+#import "MainController.h"
 @interface AppDelegate ()
 
 @end
@@ -19,7 +20,10 @@
     
     
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.rootViewController = [[ListsController alloc]init];
+//    self.window.rootViewController = [[OverViewController alloc]init];
+    
+    MainController* mainVC = [[MainController alloc]initWithRootViewController:[[OverViewController alloc]init]];
+    self.window.rootViewController = mainVC;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
