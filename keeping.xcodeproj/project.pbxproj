@@ -46,6 +46,9 @@
 		B190E8C81D17C2C100963035 /* ProfileController.m in Sources */ = {isa = PBXBuildFile; fileRef = B190E8C71D17C2C100963035 /* ProfileController.m */; };
 		B190E8CC1D17CA1500963035 /* ProfileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B190E8CA1D17CA1500963035 /* ProfileCell.m */; };
 		B190E8CD1D17CA1500963035 /* ProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B190E8CB1D17CA1500963035 /* ProfileCell.xib */; };
+		B190E8D01D17CFA500963035 /* TimelineController.m in Sources */ = {isa = PBXBuildFile; fileRef = B190E8CF1D17CFA500963035 /* TimelineController.m */; };
+		B190E8D41D17D51500963035 /* TimelineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B190E8D21D17D51500963035 /* TimelineCell.m */; };
+		B190E8D51D17D51500963035 /* TimelineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B190E8D31D17D51500963035 /* TimelineCell.xib */; };
 		CF163140D71C74CE6CA529AA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29617A2C6FABF45BA840B4C8 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -119,6 +122,11 @@
 		B190E8C91D17CA1500963035 /* ProfileCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileCell.h; sourceTree = "<group>"; };
 		B190E8CA1D17CA1500963035 /* ProfileCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileCell.m; sourceTree = "<group>"; };
 		B190E8CB1D17CA1500963035 /* ProfileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileCell.xib; sourceTree = "<group>"; };
+		B190E8CE1D17CFA500963035 /* TimelineController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimelineController.h; sourceTree = "<group>"; };
+		B190E8CF1D17CFA500963035 /* TimelineController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimelineController.m; sourceTree = "<group>"; };
+		B190E8D11D17D51500963035 /* TimelineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimelineCell.h; sourceTree = "<group>"; };
+		B190E8D21D17D51500963035 /* TimelineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimelineCell.m; sourceTree = "<group>"; };
+		B190E8D31D17D51500963035 /* TimelineCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimelineCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -516,6 +524,8 @@
 		B190E84A1D0FA6A200963035 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B190E8CE1D17CFA500963035 /* TimelineController.h */,
+				B190E8CF1D17CFA500963035 /* TimelineController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -530,6 +540,9 @@
 		B190E84C1D0FA6A200963035 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B190E8D11D17D51500963035 /* TimelineCell.h */,
+				B190E8D21D17D51500963035 /* TimelineCell.m */,
+				B190E8D31D17D51500963035 /* TimelineCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -754,6 +767,7 @@
 				B190E8891D125E9400963035 /* MenuController.xib in Resources */,
 				B190E87F1D1247E500963035 /* HomeDateView.xib in Resources */,
 				B190E8191D0FA4A800963035 /* Assets.xcassets in Resources */,
+				B190E8D51D17D51500963035 /* TimelineCell.xib in Resources */,
 				B190E8C01D14EC1300963035 /* nextCollectionCell.xib in Resources */,
 				B190E8CD1D17CA1500963035 /* ProfileCell.xib in Resources */,
 				B190E86E1D11071B00963035 /* SignUpCell.xib in Resources */,
@@ -819,9 +833,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B190E8D01D17CFA500963035 /* TimelineController.m in Sources */,
 				B190E8C41D17AA8800963035 /* OverViewCell.m in Sources */,
 				B190E8541D0FA6A200963035 /* main.m in Sources */,
 				B190E88C1D128A7F00963035 /* GroupsController.m in Sources */,
+				B190E8D41D17D51500963035 /* TimelineCell.m in Sources */,
 				B190E8BF1D14EC1300963035 /* nextCollectionCell.m in Sources */,
 				B190E89E1D138FF300963035 /* CreateCell.m in Sources */,
 				B190E8A81D13A2E300963035 /* ListsController.m in Sources */,
