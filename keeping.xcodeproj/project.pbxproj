@@ -43,6 +43,9 @@
 		B190E8C01D14EC1300963035 /* nextCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B190E8BE1D14EC1300963035 /* nextCollectionCell.xib */; };
 		B190E8C41D17AA8800963035 /* OverViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B190E8C21D17AA8800963035 /* OverViewCell.m */; };
 		B190E8C51D17AA8800963035 /* OverViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B190E8C31D17AA8800963035 /* OverViewCell.xib */; };
+		B190E8C81D17C2C100963035 /* ProfileController.m in Sources */ = {isa = PBXBuildFile; fileRef = B190E8C71D17C2C100963035 /* ProfileController.m */; };
+		B190E8CC1D17CA1500963035 /* ProfileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B190E8CA1D17CA1500963035 /* ProfileCell.m */; };
+		B190E8CD1D17CA1500963035 /* ProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B190E8CB1D17CA1500963035 /* ProfileCell.xib */; };
 		CF163140D71C74CE6CA529AA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29617A2C6FABF45BA840B4C8 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -111,6 +114,11 @@
 		B190E8C11D17AA8800963035 /* OverViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverViewCell.h; sourceTree = "<group>"; };
 		B190E8C21D17AA8800963035 /* OverViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverViewCell.m; sourceTree = "<group>"; };
 		B190E8C31D17AA8800963035 /* OverViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OverViewCell.xib; sourceTree = "<group>"; };
+		B190E8C61D17C2C100963035 /* ProfileController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileController.h; sourceTree = "<group>"; };
+		B190E8C71D17C2C100963035 /* ProfileController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileController.m; sourceTree = "<group>"; };
+		B190E8C91D17CA1500963035 /* ProfileCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileCell.h; sourceTree = "<group>"; };
+		B190E8CA1D17CA1500963035 /* ProfileCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileCell.m; sourceTree = "<group>"; };
+		B190E8CB1D17CA1500963035 /* ProfileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -400,6 +408,8 @@
 		B190E83E1D0FA6A200963035 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B190E8C61D17C2C100963035 /* ProfileController.h */,
+				B190E8C71D17C2C100963035 /* ProfileController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -414,6 +424,9 @@
 		B190E8401D0FA6A200963035 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B190E8C91D17CA1500963035 /* ProfileCell.h */,
+				B190E8CA1D17CA1500963035 /* ProfileCell.m */,
+				B190E8CB1D17CA1500963035 /* ProfileCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -742,6 +755,7 @@
 				B190E87F1D1247E500963035 /* HomeDateView.xib in Resources */,
 				B190E8191D0FA4A800963035 /* Assets.xcassets in Resources */,
 				B190E8C01D14EC1300963035 /* nextCollectionCell.xib in Resources */,
+				B190E8CD1D17CA1500963035 /* ProfileCell.xib in Resources */,
 				B190E86E1D11071B00963035 /* SignUpCell.xib in Resources */,
 				B190E8661D10F41E00963035 /* SignUp.storyboard in Resources */,
 				B190E8AD1D13B2A700963035 /* ListsCell.xib in Resources */,
@@ -814,8 +828,10 @@
 				B190E86D1D11071B00963035 /* SignUpCell.m in Sources */,
 				B190E85E1D0FDAB200963035 /* WSPaymentCircleView.m in Sources */,
 				B190E8B01D13EE5D00963035 /* OverViewController.m in Sources */,
+				B190E8CC1D17CA1500963035 /* ProfileCell.m in Sources */,
 				B190E8691D10F44900963035 /* SignUpController.m in Sources */,
 				B190E8981D12AAD000963035 /* CreateController.m in Sources */,
+				B190E8C81D17C2C100963035 /* ProfileController.m in Sources */,
 				B190E8AC1D13B2A700963035 /* ListsCell.m in Sources */,
 				B190E8521D0FA6A200963035 /* AppDelegate.m in Sources */,
 				B190E8741D11317E00963035 /* KSDatePickerAppearance.m in Sources */,
