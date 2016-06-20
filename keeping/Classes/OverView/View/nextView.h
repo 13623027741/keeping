@@ -10,4 +10,8 @@
 
 @interface nextView : UICollectionView
 
+@property(nonatomic,strong)NSArray* lists;
+
+@property(nonatomic,copy)void(^selectedRow)(NSInteger row);
+
 @end

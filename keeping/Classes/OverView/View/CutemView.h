@@ -10,4 +10,8 @@
 
 @interface CutemView : UIView
 
+@property(nonatomic,assign)NSInteger leftCount;
+
+@property(nonatomic,assign)NSInteger rightCount;
+
 @end
