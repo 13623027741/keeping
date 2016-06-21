@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "TimelineController.h"
+#import "WalkthroughViewController.h"
 #import "MainController.h"
 @interface AppDelegate ()
 
@@ -22,8 +22,8 @@
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
 //    self.window.rootViewController = [[OverViewController alloc]init];
     
-    MainController* mainVC = [[MainController alloc]initWithRootViewController:[[TimelineController alloc]init]];
-    self.window.rootViewController = mainVC;
+//    MainController* mainVC = [[MainController alloc]initWithRootViewController:[[WalkthroughViewController alloc]init]];
+    self.window.rootViewController = [[WalkthroughViewController alloc]init];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     

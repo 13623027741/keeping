@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B129DD651D18D9C0007A08C6 /* CardScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = B129DD641D18D9C0007A08C6 /* CardScrollView.m */; };
 		B190E8191D0FA4A800963035 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B190E8181D0FA4A800963035 /* Assets.xcassets */; };
 		B190E81C1D0FA4A800963035 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B190E81A1D0FA4A800963035 /* LaunchScreen.storyboard */; };
 		B190E8521D0FA6A200963035 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B190E8361D0FA6A200963035 /* AppDelegate.m */; };
@@ -49,6 +50,7 @@
 		B190E8D01D17CFA500963035 /* TimelineController.m in Sources */ = {isa = PBXBuildFile; fileRef = B190E8CF1D17CFA500963035 /* TimelineController.m */; };
 		B190E8D41D17D51500963035 /* TimelineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B190E8D21D17D51500963035 /* TimelineCell.m */; };
 		B190E8D51D17D51500963035 /* TimelineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B190E8D31D17D51500963035 /* TimelineCell.xib */; };
+		B190E8D81D17E2B500963035 /* WalkthroughViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B190E8D71D17E2B500963035 /* WalkthroughViewController.m */; };
 		CF163140D71C74CE6CA529AA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29617A2C6FABF45BA840B4C8 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +58,8 @@
 		128BF03D17B45C3796A9CE80 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		29617A2C6FABF45BA840B4C8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3212F2D5023926ED082AEA33 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		B129DD631D18D9C0007A08C6 /* CardScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardScrollView.h; sourceTree = "<group>"; };
+		B129DD641D18D9C0007A08C6 /* CardScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardScrollView.m; sourceTree = "<group>"; };
 		B190E8091D0FA4A800963035 /* KEEPING.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KEEPING.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B190E8181D0FA4A800963035 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B190E81B1D0FA4A800963035 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -127,6 +131,8 @@
 		B190E8D11D17D51500963035 /* TimelineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimelineCell.h; sourceTree = "<group>"; };
 		B190E8D21D17D51500963035 /* TimelineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimelineCell.m; sourceTree = "<group>"; };
 		B190E8D31D17D51500963035 /* TimelineCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimelineCell.xib; sourceTree = "<group>"; };
+		B190E8D61D17E2B500963035 /* WalkthroughViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WalkthroughViewController.h; sourceTree = "<group>"; };
+		B190E8D71D17E2B500963035 /* WalkthroughViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WalkthroughViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -567,6 +573,8 @@
 		B190E84F1D0FA6A200963035 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B190E8D61D17E2B500963035 /* WalkthroughViewController.h */,
+				B190E8D71D17E2B500963035 /* WalkthroughViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -581,6 +589,8 @@
 		B190E8511D0FA6A200963035 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B129DD631D18D9C0007A08C6 /* CardScrollView.h */,
+				B129DD641D18D9C0007A08C6 /* CardScrollView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -845,6 +855,8 @@
 				B190E85E1D0FDAB200963035 /* WSPaymentCircleView.m in Sources */,
 				B190E8B01D13EE5D00963035 /* OverViewController.m in Sources */,
 				B190E8CC1D17CA1500963035 /* ProfileCell.m in Sources */,
+				B190E8D81D17E2B500963035 /* WalkthroughViewController.m in Sources */,
+				B129DD651D18D9C0007A08C6 /* CardScrollView.m in Sources */,
 				B190E8691D10F44900963035 /* SignUpController.m in Sources */,
 				B190E8981D12AAD000963035 /* CreateController.m in Sources */,
 				B190E8C81D17C2C100963035 /* ProfileController.m in Sources */,
@@ -966,15 +978,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EXECUTABLE_PREFIX = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = keeping/Classes/Other/PrefixHeader.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/keeping/Classes/Other/Info.plist";
 				INFOPLIST_PREFIX_HEADER = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.e6878.keeping;
 				PRODUCT_NAME = KEEPING;
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -985,15 +999,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EXECUTABLE_PREFIX = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = keeping/Classes/Other/PrefixHeader.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/keeping/Classes/Other/Info.plist";
 				INFOPLIST_PREFIX_HEADER = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.e6878.keeping;
 				PRODUCT_NAME = KEEPING;
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
