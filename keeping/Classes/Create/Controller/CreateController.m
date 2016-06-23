@@ -64,7 +64,7 @@ static NSString* CCell = @"cell";
     self.titleLabel = [[UILabel alloc]init];
     self.titleLabel.textColor = [UIColor whiteColor];
     self.titleLabel.text = @"Create New";
-    self.titleLabel.font = kFONT(18);
+    self.titleLabel.font = kFONT(15);
     [self.view addSubview:self.titleLabel];
     
     self.addButton = [[UIButton alloc]init];

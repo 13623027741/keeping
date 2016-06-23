@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "168DE9CB0C0F925CADD474A2C3D1A983A3F1A331",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "168DE9CB0C0F925CADD474A2C3D1A983A3F1A331" : 0,
+    "E32AFF8885E46C0A1A8DA26E577A8F3E9FEB71F1" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "2CE8C7D3-0876-4911-BFF5-26C992793C55",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "168DE9CB0C0F925CADD474A2C3D1A983A3F1A331" : "keeping\/",
+    "E32AFF8885E46C0A1A8DA26E577A8F3E9FEB71F1" : "musicPlay\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "keeping",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "keeping.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/13623027741\/keeping.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "168DE9CB0C0F925CADD474A2C3D1A983A3F1A331"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/13623027741\/musicPlay.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E32AFF8885E46C0A1A8DA26E577A8F3E9FEB71F1"
+    }
+  ]
+}

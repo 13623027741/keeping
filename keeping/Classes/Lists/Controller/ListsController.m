@@ -51,7 +51,7 @@ static NSString* LCell = @"cell";
     [self.view addSubview:self.menuButton];
     
     self.titleLabel = [[UILabel alloc]init];
-    self.titleLabel.font = kFONT(19);
+    self.titleLabel.font = kFONT(15);
     self.titleLabel.text = @"Lists";
     [self.view addSubview:self.titleLabel];
     

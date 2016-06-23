@@ -41,7 +41,7 @@
                             <constraint firstAttribute="height" constant="30" id="W9o-lA-JQn"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
-                        <color key="textColor" red="0.39607843139999999" green="0.38823529410000002" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" red="0.57647058819999997" green="0.57647058819999997" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="completed_background" translatesAutoresizingMaskIntoConstraints="NO" id="pCt-Ua-sXc">
@@ -57,7 +57,7 @@
                             <constraint firstAttribute="width" constant="20" id="RHU-Xm-XpJ"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="10"/>
-                        <color key="textColor" red="0.39607843139999999" green="0.38823529410000002" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" red="0.57647058823529407" green="0.57647058823529407" blue="0.58823529411764708" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
