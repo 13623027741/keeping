@@ -52,7 +52,7 @@ static NSString* gCell = @"cell";
     [self.view addSubview:self.menuButton];
     
     self.titleLabel = [[UILabel alloc]init];
-    self.titleLabel.font = kFONT(19);
+    self.titleLabel.font = kFONT(15);
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
     self.titleLabel.text = @"Groups";
     [self.view addSubview:self.titleLabel];

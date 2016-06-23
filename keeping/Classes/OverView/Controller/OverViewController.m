@@ -210,7 +210,6 @@ NSString* nCell = @"cell";
     OverViewCell* cell = [tableView dequeueReusableCellWithIdentifier:oCell forIndexPath:indexPath];
     
     if (!cell) {
-//        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:oCell];
         cell = [[[NSBundle mainBundle]loadNibNamed:@"OverViewCell" owner:nil options:nil]lastObject];
     }
     
@@ -251,7 +250,6 @@ NSString* nCell = @"cell";
     }
     
     cell.title.text = self.lists[indexPath.row];
-    
     return cell;
 }
 

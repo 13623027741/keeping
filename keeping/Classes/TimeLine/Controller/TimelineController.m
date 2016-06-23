@@ -56,7 +56,7 @@ static NSString* PCell = @"cell";
     self.titleLabel = [[UILabel alloc]init];
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
     self.titleLabel.text = @"Timeline";
-    self.titleLabel.font = kFONT(18);
+    self.titleLabel.font = kFONT(15);
     [self.view addSubview:self.titleLabel];
     
     self.searchButton = [[UIButton alloc]init];

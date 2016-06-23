@@ -7,11 +7,13 @@
 //
 
 #import "AppDelegate.h"
-#import "WalkthroughViewController.h"
+#import "FebruaryController.h"
 #import "MainController.h"
 @interface AppDelegate ()
 
 @end
+
+ 
 
 @implementation AppDelegate
 
@@ -20,10 +22,10 @@
     
     
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-//    self.window.rootViewController = [[OverViewController alloc]init];
+//    self.window.rootViewController = [[FebruaryController alloc]init];
     
-//    MainController* mainVC = [[MainController alloc]initWithRootViewController:[[WalkthroughViewController alloc]init]];
-    self.window.rootViewController = [[WalkthroughViewController alloc]init];
+    MainController* mainVC = [[MainController alloc]initWithRootViewController:[[FebruaryController alloc]init]];
+    self.window.rootViewController = mainVC;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
