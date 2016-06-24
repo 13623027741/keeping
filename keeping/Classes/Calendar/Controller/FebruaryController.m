@@ -43,7 +43,7 @@
 
 @property(nonatomic,strong)NSDictionary* weeks;
 
-@property(nonatomic,strong)NSArray* days;
+@property(nonatomic,assign)NSInteger currentWeekDay;
 
 @end
 
@@ -53,17 +53,17 @@
 NSString* CCell = @"cell";
 NSString* TCell = @"cell";
 NSInteger tag = 1;
+int i = 1;
 @implementation FebruaryController
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.CurrentDay = [FebruaryTool getCurrentDay];
+    self.CurrentDay = [FebruaryTool getCurrentDay] ;
     
     self.dayCount = [FebruaryTool getMonthDays:[FebruaryTool getCurrentMonth] year:[FebruaryTool getCurrentYear]];
-    
-    self.days = [NSArray arrayWithArray:[FebruaryTool getCurrentMonthWithDay]];
+    self.currentWeekDay = [FebruaryTool getWeekWithDay];
     
     self.month = @[@"January",
                    @"February",
@@ -228,7 +228,8 @@ NSInteger tag = 1;
 -(UICollectionViewCell*)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     CalendarCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:CCell forIndexPath:indexPath];
-    
+    cell.titleLabel.text = @"";
+    cell.imgView.alpha = 0;
     if (!cell) {
         cell = [[[NSBundle mainBundle]loadNibNamed:@"CalendarCell" owner:nil options:nil]lastObject];
     }
@@ -239,16 +240,21 @@ NSInteger tag = 1;
         cell.backgroundColor = [UIColor clearColor];
     }
     
-    NSLog(@"%@",self.days[indexPath.row]);
     
-    NSNumber* num = self.days[indexPath.row];
-    
-    cell.titleLabel.text = [NSString stringWithFormat:@"%ld",[num integerValue]];
+    if (self.currentWeekDay <= indexPath.row) {
+        if ((indexPath.row - self.currentWeekDay) < self.dayCount) {
+            cell.titleLabel.text = [NSString stringWithFormat:@"%d",i];
+            cell.imgView.alpha = 1;
+            i ++;
+        }
+        
+    }
     
     return cell;
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    i = 1;
     self.CurrentDay = indexPath.row;
     NSLog(@"%ld",indexPath.row);
     [collectionView reloadData];
@@ -307,6 +313,7 @@ NSInteger tag = 1;
 #pragma mark -  JinnPopMenuDelegate 代理
 - (void)itemSelectedAtIndex:(NSInteger)index popMenu:(JinnPopMenu *)popMenu
 {
+    i  = 1;
     NSLog(@"%@",self.month[index]);
     self.titleLabel.text = self.month[index];
     if (popMenu.tag != 10000)
@@ -315,6 +322,9 @@ NSInteger tag = 1;
     }
     
     self.dayCount = [FebruaryTool getMonthDays:(index + 1) year:[FebruaryTool getCurrentYear]];
+    self.currentWeekDay = [FebruaryTool getWeekDayWithMonth:index + 1];
+    
+    [self.collectionView reloadData];
 }
 
 
