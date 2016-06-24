@@ -21,4 +21,6 @@
 +(NSInteger)getMonthDays:(NSInteger)month year:(NSInteger)year;
 
 + (NSArray*)getCurrentMonthWithDay;
+
++(NSInteger)getWeekDayWithMonth:(NSInteger)month;
 @end

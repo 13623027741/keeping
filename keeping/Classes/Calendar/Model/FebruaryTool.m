@@ -73,6 +73,30 @@
     return [number integerValue];
 }
 
++(NSInteger)getWeekDayWithMonth:(NSInteger)month{
+    
+    NSDictionary* weeks = @{@"星期日":@(0),
+                            @"星期一":@(1),
+                            @"星期二":@(2),
+                            @"星期三":@(3),
+                            @"星期四":@(4),
+                            @"星期五":@(5),
+                            @"星期天":@(6)
+                            };
+    
+    NSString* str = [NSString stringWithFormat:@"%ld:%ld:01",[FebruaryTool getCurrentYear],month];
+    NSDateFormatter* dateF = [[NSDateFormatter alloc]init];
+    dateF.dateFormat = [NSString stringWithFormat:@"yyyy:MM:dd"];
+    NSDate* date = [dateF dateFromString:str];
+    
+    NSDateFormatter * dateFormatter = [[NSDateFormatter alloc] init] ;
+    dateFormatter.dateFormat = @"EEEE";
+    
+    NSNumber* number = [weeks objectForKey:[dateFormatter stringFromDate:date]];
+    return [number integerValue];
+    
+}
+
 +(NSInteger)getMonthDays:(NSInteger)month year:(NSInteger)year
 {
     if (month<=0 || month > 12) {
@@ -108,41 +132,44 @@
     
     NSMutableArray* arr = [NSMutableArray array];
     
-    for (NSInteger i = 1; i <= [FebruaryTool getCurrentDay]; i++) {
+    NSInteger day = [FebruaryTool getMonthDays:[FebruaryTool getCurrentMonth] year:[FebruaryTool getCurrentYear]];
+    
+    for (NSInteger i = 1; i <= day; i++) {
         [arr addObject:@(i)];
     }
     
-    NSInteger count = [FebruaryTool getWeekWithDay] - 1;
-    
-    NSMutableArray* arr1 = [NSMutableArray array];
-    
-    NSInteger temp = [FebruaryTool getDayCountWithLastMonth];
-    
-    for (NSInteger i = 0; i < count; i++) {
-        [arr1 addObject:@(temp - i)];
-    }
-    
-    NSMutableArray* arr2 = [NSMutableArray array];
-    
-    count = 35 - arr.count - arr1.count;
-    
-    for (NSInteger i = 1; i <= count; i++) {
-        [arr2 addObject:@(i)];
-    }
-    
-    NSMutableArray* arr3 = [NSMutableArray array];
-    
-    for (NSNumber* num in arr1) {
-        [arr3 addObject:num];
-    }
-    
-    for (NSNumber* num in arr) {
-        [arr3 addObject:num];
-    }
-    for (NSNumber* num in arr2) {
-        [arr3 addObject:num];
-    }
-    return arr3;
+//    NSInteger count = [FebruaryTool getWeekWithDay] - 1;
+//    
+//    NSMutableArray* arr1 = [NSMutableArray array];
+//    
+//    NSInteger temp = [FebruaryTool getDayCountWithLastMonth];
+//    
+//    for (NSInteger i = 0; i < count; i++) {
+//        [arr1 addObject:@(temp - count + i)];
+//    }
+//    
+//    NSMutableArray* arr2 = [NSMutableArray array];
+//    
+//    count = 35 - arr.count - arr1.count;
+//    
+//    for (NSInteger i = 1; i <= count; i++) {
+//        [arr2 addObject:@(i)];
+//    }
+//    
+//    NSMutableArray* arr3 = [NSMutableArray array];
+//    
+//    for (NSNumber* num in arr1) {
+//        [arr3 addObject:num];
+//    }
+//    
+//    for (NSNumber* num in arr) {
+//        [arr3 addObject:num];
+//    }
+//    for (NSNumber* num in arr2) {
+//        [arr3 addObject:num];
+//    }
+//    return arr3;
+    return arr;
 }
 
 @end
