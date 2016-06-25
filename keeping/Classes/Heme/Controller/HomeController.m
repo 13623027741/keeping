@@ -10,6 +10,8 @@
 #import "RoundButton.h"
 #import "HomeDateView.h"
 #import "MenuController.h"
+#import "LZBBubbleTransition.h"
+
 @interface HomeController ()
 
 @property(nonatomic,strong)UIImageView* backgroundImageView;
@@ -30,9 +32,22 @@
 
 @property(nonatomic,strong)UIButton* moreButton;
 
+@property(nonatomic,strong)MenuController* menu;
+
+@property(nonatomic,strong)LZBBubbleTransition* transition;
 @end
 
 @implementation HomeController
+
++(instancetype)getHomeObject{
+    static HomeController* home;
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        home = [[HomeController alloc]init];
+    });
+    return home;
+}
 
 -(NSArray *)massages{
     if (!_massages) {
@@ -49,6 +64,9 @@
     [self addAutoLayout];
     
     [self addTarger];
+    
+    [self checkMassage];
+    [NSTimer scheduledTimerWithTimeInterval:100 target:self selector:@selector(checkMassage) userInfo:nil repeats:YES];
 }
 
 /**
@@ -64,8 +82,8 @@
     [self.view addSubview:self.leftButton];
     
     self.rightButton = [[RoundButton alloc]initWithFrame:CGRectMake(0, 0, 40, 40)];
-    [self.rightButton setImage:[UIImage imageNamed:@"icon"] forState:UIControlStateNormal];
-    [self.rightButton setBackgroundColor:[UIColor orangeColor]];
+    [self.rightButton setImage:[UIImage imageNamed:@"icon_img"] forState:UIControlStateNormal];
+    
     
     [self.view addSubview:self.rightButton];
     
@@ -94,6 +112,7 @@
     self.moreButton = [[UIButton alloc]init];
     [self.moreButton setImage:[UIImage imageNamed:@"Dislosure"] forState:UIControlStateNormal];
     [self.view addSubview:self.moreButton];
+    
 }
 /**
  *  添加自动约束
@@ -148,6 +167,7 @@
         make.width.height.mas_equalTo(@20);
         make.bottom.mas_equalTo(self.view.mas_bottom).offset(-20);
     }];
+    
 }
 /**
  *  添加事件
@@ -156,10 +176,44 @@
     [[self.leftButton rac_signalForControlEvents:UIControlEventTouchUpInside]
     subscribeNext:^(id x) {
         NSLog(@"---");
-        MenuController* menu = [[[NSBundle mainBundle]loadNibNamed:@"MenuController" owner:nil options:nil]lastObject];
-        [self.view addSubview:menu];
+        MenuController* vc = [[[NSBundle mainBundle]loadNibNamed:@"MenuController" owner:nil options:nil]lastObject];
+        @weakify(self);
+        
+        vc.modalPresentationStyle = UIModalPresentationCustom;
+        self.transition = [[LZBBubbleTransition alloc]initWithPresent:^(UIViewController *presented, UIViewController *presenting, UIViewController *sourceVC, LZBBaseTransition *transition) {
+            @strongify(self);
+            LZBBubbleTransition  *bubble = (LZBBubbleTransition *)transition;
+            //设置动画的View
+            bubble.targetView = self.leftButton;
+            //设置弹簧属性
+            bubble.bounceIsEnable = YES;
+        } Dismiss:^(UIViewController *dismissVC, LZBBaseTransition *transition) {
+            
+        }];
+        vc.transitioningDelegate = self.transition;
+        [self presentViewController:vc animated:YES completion:nil];
+
+        
     }];
 }
+
+-(void)checkMassage{
+    
+    NSDateFormatter* formatter = [[NSDateFormatter alloc]init];
+    formatter.dateFormat = @"hh";
+    NSInteger time = [[formatter stringFromDate:[NSDate date]] integerValue];
+    
+    if (5 < time || time < 11) {
+        self.massage.text = self.massages[0];
+    }else if (11 < time || time < 17){
+        self.massage.text = self.massages[1];
+    }else{
+        self.massage.text = self.massages[2];
+    }
+}
+
+
+
 
 //-(UIStatusBarStyle)preferredStatusBarStyle{
 //    return UIStatusBarStyleLightContent;

@@ -9,6 +9,8 @@
 #import "ListsController.h"
 #import "ListsCell.h"
 #import "MenuController.h"
+#import "LZBBubbleTransition.h"
+
 @interface ListsController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property(nonatomic,strong)UIButton* menuButton;
@@ -30,9 +32,21 @@
 @property(nonatomic,strong)UITableView* tableView;
 
 @property(nonatomic,strong)MenuController* menu;
+
+@property(nonatomic,strong)LZBBubbleTransition* transition;
+
 @end
 static NSString* LCell = @"cell";
 @implementation ListsController
+
++(instancetype)getxListsObject{
+    static ListsController* lists;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        lists = [[ListsController alloc]init];
+    });
+    return lists;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -90,9 +104,6 @@ static NSString* LCell = @"cell";
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:self.tableView];
     
-    self.menu = [[[NSBundle mainBundle]loadNibNamed:@"MenuController" owner:nil options:nil]lastObject];
-    self.menu.alpha = 0;
-    [self.view addSubview:self.menu];
 }
 
 -(void)addAutolayout{
@@ -152,18 +163,17 @@ static NSString* LCell = @"cell";
         make.right.left.bottom.equalTo(self.view);
         make.top.mas_equalTo(self.imageView.mas_bottom);
     }];
-    
-    [self.menu mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.left.top.bottom.equalTo(self.view);
-    }];
 }
 
 
 -(void)addTarger{
+    @weakify(self);
     [[self.menuButton rac_signalForControlEvents:UIControlEventTouchUpInside]
     subscribeNext:^(id x) {
+        @strongify(self);
         NSLog(@"%s---调出菜单",__func__);
-        self.menu.alpha = 1;
+        MenuController* menu = [[[NSBundle mainBundle]loadNibNamed:@"MenuController" owner:nil options:nil]lastObject];
+        [self pushViewController:menu button:self.menuButton];
     }];
     
     [[self.shareButton rac_signalForControlEvents:UIControlEventTouchUpInside]
@@ -180,6 +190,24 @@ static NSString* LCell = @"cell";
     subscribeNext:^(id x) {
         NSLog(@"查找");
     }];
+}
+
+-(void)pushViewController:(UIViewController*)viewController button:(UIButton*)button{
+    
+    viewController.modalPresentationStyle = UIModalPresentationCustom;
+    
+    self.transition = [[LZBBubbleTransition alloc]initWithPresent:^(UIViewController *presented, UIViewController *presenting, UIViewController *sourceVC, LZBBaseTransition *transition) {
+        LZBBubbleTransition  *bubble = (LZBBubbleTransition *)transition;
+        //设置动画的View
+        bubble.targetView = button;
+        //设置弹簧属性
+        bubble.bounceIsEnable = YES;
+    } Dismiss:^(UIViewController *dismissVC, LZBBaseTransition *transition) {
+        
+    }];
+    viewController.transitioningDelegate = self.transition;
+    [self presentViewController:viewController animated:YES completion:nil];
+    
 }
 
 #pragma mark - 代理
@@ -217,6 +245,8 @@ static NSString* LCell = @"cell";
     [super didReceiveMemoryWarning];
     
 }
+
+
 
 
 

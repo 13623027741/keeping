@@ -10,4 +10,6 @@
 
 @interface OverViewController : UIViewController
 
++(instancetype)getOverViewObject;
+
 @end

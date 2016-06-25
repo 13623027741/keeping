@@ -12,6 +12,7 @@
 #import "CutemView.h"
 #import "nextCollectionCell.h"
 #import "OverViewCell.h"
+#import "MenuController.h"
 
 @interface OverViewController ()<UITableViewDelegate,UITableViewDataSource,UICollectionViewDataSource,UICollectionViewDelegate,VTMagicViewDelegate,VTMagicViewDataSource>
 
@@ -33,13 +34,24 @@
 
 @property(nonatomic,strong)NSArray* lists;
 
+@property(nonatomic,strong)MenuController* menu;
+
+@property(nonatomic,strong)LZBBubbleTransition* transition;
+
 @end
 static NSString* oCell = @"cell";
 NSString* nCell = @"cell";
 
 @implementation OverViewController
 
-
++(instancetype)getOverViewObject{
+    static OverViewController* overview;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        overview = [[OverViewController alloc]init];
+    });
+    return overview;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -140,6 +152,7 @@ NSString* nCell = @"cell";
     [self.tableView registerNib:[UINib nibWithNibName:@"OverViewCell" bundle:nil] forCellReuseIdentifier:oCell];
 //    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:oCell];
     [self.view addSubview:self.tableView];
+    
 }
 
 -(void)addAutolayout{
@@ -193,6 +206,31 @@ NSString* nCell = @"cell";
 }
 
 -(void)addTarger{
+    @weakify(self);
+    [[self.menuButton rac_signalForControlEvents:UIControlEventTouchUpInside]
+    subscribeNext:^(id x) {
+        @strongify(self);
+        MenuController* menu = kBOUNDLE_SOURCE(@"MenuController");
+        [self pushViewController:menu button:self.menuButton];
+    }];
+    
+}
+
+-(void)pushViewController:(UIViewController*)viewController button:(UIButton*)button{
+    
+    viewController.modalPresentationStyle = UIModalPresentationCustom;
+    
+    self.transition = [[LZBBubbleTransition alloc]initWithPresent:^(UIViewController *presented, UIViewController *presenting, UIViewController *sourceVC, LZBBaseTransition *transition) {
+        LZBBubbleTransition  *bubble = (LZBBubbleTransition *)transition;
+        //设置动画的View
+        bubble.targetView = button;
+        //设置弹簧属性
+        bubble.bounceIsEnable = YES;
+    } Dismiss:^(UIViewController *dismissVC, LZBBaseTransition *transition) {
+        
+    }];
+    viewController.transitioningDelegate = self.transition;
+    [self presentViewController:viewController animated:YES completion:nil];
     
 }
 

@@ -70,17 +70,10 @@
         
         
         MainController* mainVC = [[MainController alloc]initWithRootViewController:[[HomeController alloc]init]];
-//        [UIApplication sharedApplication].keyWindow.rootViewController = mainVC;
-        
         
         mainVC.transitioningDelegate = self;
         
         [self presentViewController:mainVC animated:YES completion:nil];
-        
-        dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, 0.5 * NSEC_PER_SEC);
-        dispatch_after(time, dispatch_get_main_queue(), ^{
-            
-        });
         
     }];
 }
@@ -117,7 +110,7 @@
         }
     }
     
-    NSLog(@"%ld",self.cardScrollView.currentCard);
+//    NSLog(@"%ld",self.cardScrollView.currentCard);
     self.pageControl.currentPage = self.cardScrollView.currentCard;
     
     

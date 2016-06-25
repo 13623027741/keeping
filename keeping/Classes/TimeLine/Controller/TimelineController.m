@@ -9,6 +9,7 @@
 #import "TimelineController.h"
 #import "ProfileCell.h"
 #import "TimelineCell.h"
+#import "MenuController.h"
 
 @interface TimelineController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -28,13 +29,21 @@
 
 @property(nonatomic,strong)UITableView* tableView;
 
+@property(nonatomic,strong)LZBBubbleTransition* transition;
 
 @end
 static NSString* PCell = @"cell";
 
 @implementation TimelineController
 
-
++(instancetype)getTimelineObject{
+    static TimelineController* timeline;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        timeline = [[TimelineController alloc]init];
+    });
+    return timeline;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -140,9 +149,35 @@ static NSString* PCell = @"cell";
         make.left.right.bottom.equalTo(self.view);
         make.top.mas_equalTo(self.imageView.mas_bottom);
     }];
+    
 }
 
 -(void)addTarger{
+    @weakify(self);
+    [[self.menuButton rac_signalForControlEvents:UIControlEventTouchUpInside]
+    subscribeNext:^(id x) {
+        @strongify(self);
+        MenuController* menu = kBOUNDLE_SOURCE(@"MenuController");
+        [self pushViewController:menu button:self.menuButton];
+    }];
+}
+
+
+-(void)pushViewController:(UIViewController*)viewController button:(UIButton*)button{
+    
+    viewController.modalPresentationStyle = UIModalPresentationCustom;
+    
+    self.transition = [[LZBBubbleTransition alloc]initWithPresent:^(UIViewController *presented, UIViewController *presenting, UIViewController *sourceVC, LZBBaseTransition *transition) {
+        LZBBubbleTransition  *bubble = (LZBBubbleTransition *)transition;
+        //设置动画的View
+        bubble.targetView = button;
+        //设置弹簧属性
+        bubble.bounceIsEnable = YES;
+    } Dismiss:^(UIViewController *dismissVC, LZBBaseTransition *transition) {
+        
+    }];
+    viewController.transitioningDelegate = self.transition;
+    [self presentViewController:viewController animated:YES completion:nil];
     
 }
 

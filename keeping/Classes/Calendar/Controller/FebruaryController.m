@@ -13,7 +13,8 @@
 #import "CalendarCell.h"
 #import "headView.h"
 #import "FebruaryTool.h"
-
+#import "MenuController.h"
+#import "LZBBubbleTransition.h"
 
 @interface FebruaryController ()<UITableViewDelegate,UITableViewDataSource,UICollectionViewDelegate,UICollectionViewDataSource,JinnPopMenuDelegate>
 
@@ -35,6 +36,8 @@
 
 @property(nonatomic,strong)bottomView* bottom_View;
 
+@property(nonatomic,strong)MenuController* menu;
+
 @property(nonatomic,strong)NSArray* month;
 
 @property(nonatomic,assign)NSInteger CurrentDay;
@@ -44,6 +47,8 @@
 @property(nonatomic,strong)NSDictionary* weeks;
 
 @property(nonatomic,assign)NSInteger currentWeekDay;
+
+@property(nonatomic,strong)LZBBubbleTransition* transition;
 
 @end
 
@@ -56,9 +61,19 @@ NSInteger tag = 1;
 int i = 1;
 @implementation FebruaryController
 
++(instancetype)getxCalendarObject{
+    static FebruaryController* february;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        february = [[FebruaryController alloc]init];
+    });
+    return february;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.view.backgroundColor = [UIColor whiteColor];
     
     self.CurrentDay = [FebruaryTool getCurrentDay] ;
     
@@ -152,6 +167,7 @@ int i = 1;
     self.bottom_View = [[[NSBundle mainBundle]loadNibNamed:@"bottomView" owner:nil options:nil]lastObject];
     self.bottom_View.width =  self.view.bounds.size.width;
 //    [self.view addSubview:self.bottom_View];
+    
 }
 
 -(void)addAutolayout{
@@ -217,6 +233,31 @@ int i = 1;
         @strongify(self);
         [self labelButtonClicked];
     }];
+    
+    [[self.menuButton rac_signalForControlEvents:UIControlEventTouchUpInside]
+    subscribeNext:^(id x) {
+        MenuController* vc = [[[NSBundle mainBundle]loadNibNamed:@"MenuController" owner:nil options:nil]lastObject];
+        [self pushViewController:vc button:self.menuButton];
+    }];
+}
+
+
+-(void)pushViewController:(UIViewController*)viewController button:(UIButton*)button{
+    
+    viewController.modalPresentationStyle = UIModalPresentationCustom;
+    
+    self.transition = [[LZBBubbleTransition alloc]initWithPresent:^(UIViewController *presented, UIViewController *presenting, UIViewController *sourceVC, LZBBaseTransition *transition) {
+        LZBBubbleTransition  *bubble = (LZBBubbleTransition *)transition;
+        //设置动画的View
+        bubble.targetView = button;
+        //设置弹簧属性
+        bubble.bounceIsEnable = YES;
+    } Dismiss:^(UIViewController *dismissVC, LZBBaseTransition *transition) {
+        
+    }];
+    viewController.transitioningDelegate = self.transition;
+    [self presentViewController:viewController animated:YES completion:nil];
+    
 }
 
 #pragma mark - UICollectionView 代理
@@ -335,7 +376,6 @@ int i = 1;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 
 @end

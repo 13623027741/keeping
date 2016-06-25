@@ -10,4 +10,6 @@
 
 @interface ProfileController : UIViewController
 
++(instancetype)getProfileObject;
+
 @end

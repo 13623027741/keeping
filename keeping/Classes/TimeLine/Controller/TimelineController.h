@@ -10,4 +10,6 @@
 
 @interface TimelineController : UIViewController
 
++(instancetype)getTimelineObject;
+
 @end

@@ -18,6 +18,8 @@
 #define kFONT(s) [UIFont fontWithName:@"Avenir-Book" size:s];
 #import "ReactiveCocoa.h"
 #import "Masonry.h"
+#import "LZBBubbleTransition.h"
+
 
 #define kWHITE_COLOR [UIColor whiteColor]
 #define kCOLOR_RGB(R,G,B) [UIColor colorWithRed:(R)/255.0 green:(G)/255.0 blue:(B)/255.0 alpha:1];
@@ -29,4 +31,10 @@ blue:((float)(rgbValue & 0xFF)) / 255.0                                       \
 alpha:1.0]
 
 
+#define kBOUNDLE_SOURCE(NIB_NAME) [[[NSBundle mainBundle]loadNibNamed:(NIB_NAME) owner:nil options:nil]lastObject];
+
 #define kSCREEN_SIZE [UIScreen mainScreen].bounds.size
+
+
+
+
