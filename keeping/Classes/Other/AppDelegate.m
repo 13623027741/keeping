@@ -7,8 +7,10 @@
 //
 
 #import "AppDelegate.h"
-#import "FebruaryController.h"
+#import "WalkthroughViewController.h"
 #import "MainController.h"
+#import "TabBarController.h"
+#import "HomeController.h"
 @interface AppDelegate ()
 
 @end
@@ -22,11 +24,16 @@
     
     
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-//    self.window.rootViewController = [[FebruaryController alloc]init];
     
-    MainController* mainVC = [[MainController alloc]initWithRootViewController:[[FebruaryController alloc]init]];
-    self.window.rootViewController = mainVC;
+//    self.window.rootViewController = [[WalkthroughViewController alloc]init];
+//    self.window.rootViewController = [[TabBarController alloc]init];
+    
+    TabBarController* tab = [[TabBarController alloc]init];
+    
+//    self.window.rootViewController = [[HomeController alloc]init];
+    self.window.rootViewController = tab;
     self.window.backgroundColor = [UIColor whiteColor];
+    
     [self.window makeKeyAndVisible];
     
     if (![[NSUserDefaults standardUserDefaults]objectForKey:@"userName"]) {

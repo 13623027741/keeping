@@ -10,7 +10,7 @@
 #import "CreateController.h"
 #import "CreateCell.h"
 #import "MenuController.h"
-
+#
 @interface CreateController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (strong, nonatomic)UITableView *tableView;
@@ -33,9 +33,20 @@
 
 @property(nonatomic,strong)MenuController* menu;
 
+@property(nonatomic,strong)LZBBubbleTransition* transition;
+
 @end
 static NSString* CCell = @"cell";
 @implementation CreateController
+
++(instancetype)getxCreateObject{
+    static CreateController* create;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        create = [[CreateController alloc]init];
+    });
+    return create;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -95,9 +106,6 @@ static NSString* CCell = @"cell";
     self.checkImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"check"]];
     [self.view addSubview:self.checkImageView];
     
-    self.menu = [[[NSBundle mainBundle]loadNibNamed:@"MenuController" owner:nil options:nil]lastObject];
-    self.menu.alpha = 0;
-    [self.view addSubview:self.menu];
 }
 
 -(void)addAutolayout{
@@ -155,19 +163,38 @@ static NSString* CCell = @"cell";
         make.top.mas_equalTo(self.addImageView.mas_bottom);
         make.bottom.mas_equalTo(self.nextButton.mas_top);
     }];
-    
-    [self.menu mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.top.bottom.equalTo(self.view);
-    }];
 }
 
 -(void)addTarger{
+    @weakify(self);
     [[self.menuButton rac_signalForControlEvents:UIControlEventTouchUpInside]
     subscribeNext:^(id x) {
         NSLog(@"打开菜单");
-        self.menu.alpha = 1;
+        @strongify(self);
+        MenuController* menu = [[[NSBundle mainBundle]loadNibNamed:@"MenuController" owner:nil options:nil]lastObject];
+        [self pushViewController:menu button:self.menuButton];
     }];
 }
+
+
+-(void)pushViewController:(UIViewController*)viewController button:(UIButton*)button{
+    
+    viewController.modalPresentationStyle = UIModalPresentationCustom;
+    
+    self.transition = [[LZBBubbleTransition alloc]initWithPresent:^(UIViewController *presented, UIViewController *presenting, UIViewController *sourceVC, LZBBaseTransition *transition) {
+        LZBBubbleTransition  *bubble = (LZBBubbleTransition *)transition;
+        //设置动画的View
+        bubble.targetView = button;
+        //设置弹簧属性
+        bubble.bounceIsEnable = YES;
+    } Dismiss:^(UIViewController *dismissVC, LZBBaseTransition *transition) {
+        
+    }];
+    viewController.transitioningDelegate = self.transition;
+    [self presentViewController:viewController animated:YES completion:nil];
+    
+}
+
 
 #pragma mark - 代理
 

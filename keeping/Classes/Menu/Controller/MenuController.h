@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "RoundButton.h"
-@interface MenuController : UIView
+@interface MenuController : UIViewController
 @property (weak, nonatomic) IBOutlet UIButton *closeButton;
 @property (weak, nonatomic) IBOutlet RoundButton *MyIconButtton;
 @property (weak, nonatomic) IBOutlet UIButton *HomeButton;

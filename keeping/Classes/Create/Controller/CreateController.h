@@ -10,4 +10,6 @@
 
 @interface CreateController : UIViewController
 
++(instancetype)getxCreateObject;
+
 @end

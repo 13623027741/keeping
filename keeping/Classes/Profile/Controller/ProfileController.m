@@ -9,7 +9,7 @@
 #import "ProfileController.h"
 #import "CutemView.h"
 #import "ProfileCell.h"
-
+#import "MenuController.h"
 @interface ProfileController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property(nonatomic,strong)UIButton* menuButton;
@@ -28,6 +28,8 @@
 
 @property(nonatomic,strong)UITableView* tableView;
 
+@property(nonatomic,strong)LZBBubbleTransition* transition;
+
 
 @end
 static NSString* PCell = @"cell";
@@ -35,6 +37,14 @@ static NSString* PCell = @"cell";
 @implementation ProfileController
 
 
++(instancetype)getProfileObject{
+    static ProfileController* profile;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        profile = [[ProfileController alloc]init];
+    });
+    return profile;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -93,6 +103,7 @@ static NSString* PCell = @"cell";
     self.tableView.dataSource = self;
     [self.tableView registerNib:[UINib nibWithNibName:@"ProfileCell" bundle:nil] forCellReuseIdentifier:PCell];
     [self.view addSubview:self.tableView];
+    
 }
 
 -(void)addAutolayout{
@@ -146,6 +157,30 @@ static NSString* PCell = @"cell";
 }
 
 -(void)addTarger{
+    @weakify(self);
+    [[self.menuButton rac_signalForControlEvents:UIControlEventTouchUpInside]
+    subscribeNext:^(id x) {
+        @strongify(self);
+        MenuController* menu = kBOUNDLE_SOURCE(@"MenuController");
+        [self pushViewController:menu button:self.menuButton];
+    }];
+}
+
+-(void)pushViewController:(UIViewController*)viewController button:(UIButton*)button{
+    
+    viewController.modalPresentationStyle = UIModalPresentationCustom;
+    
+    self.transition = [[LZBBubbleTransition alloc]initWithPresent:^(UIViewController *presented, UIViewController *presenting, UIViewController *sourceVC, LZBBaseTransition *transition) {
+        LZBBubbleTransition  *bubble = (LZBBubbleTransition *)transition;
+        //设置动画的View
+        bubble.targetView = button;
+        //设置弹簧属性
+        bubble.bounceIsEnable = YES;
+    } Dismiss:^(UIViewController *dismissVC, LZBBaseTransition *transition) {
+        
+    }];
+    viewController.transitioningDelegate = self.transition;
+    [self presentViewController:viewController animated:YES completion:nil];
     
 }
 

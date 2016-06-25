@@ -13,6 +13,10 @@
 #import "WSPaymentCircleView.h"
 #import "SignUpController.h"
 #import "HomeController.h"
+#import "AppDelegate.h"
+#import "TabBarController.h"
+
+
 #define SCREEN_SIZE [UIScreen mainScreen].bounds.size
 
 @interface LoginController ()<UITextFieldDelegate>
@@ -73,6 +77,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.view.backgroundColor = kCOLOR_RGB(109, 212, 198);
     
     [self addView];
     
@@ -327,7 +333,11 @@
             NSLog(@"登陆成功");
             self.iconView.alpha = 0;
             [self.circleView loadStatus:WSLoadStatusSuccess];
-            [self presentViewController:[[HomeController alloc]init] animated:YES completion:nil];
+            
+            TabBarController* tab = [[TabBarController alloc]init];
+             AppDelegate* app = [UIApplication sharedApplication].delegate;
+            app.window.rootViewController = tab;
+            
         }else{
             NSLog(@"登陆失败");
             self.iconView.alpha = 0;

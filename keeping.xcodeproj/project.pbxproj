@@ -18,6 +18,10 @@
 		B129DD8A1D1A6C6B007A08C6 /* CalendarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B129DD881D1A6C6B007A08C6 /* CalendarCell.xib */; };
 		B129DD8D1D1A7913007A08C6 /* headView.m in Sources */ = {isa = PBXBuildFile; fileRef = B129DD8C1D1A7913007A08C6 /* headView.m */; };
 		B129DD901D1B8E1A007A08C6 /* FebruaryTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B129DD8F1D1B8E1A007A08C6 /* FebruaryTool.m */; };
+		B129DD931D1CC750007A08C6 /* SettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = B129DD921D1CC750007A08C6 /* SettingController.m */; };
+		B129DD961D1CD545007A08C6 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = B129DD951D1CD545007A08C6 /* TabBarController.m */; };
+		B13773801D1E2D0F007DBF80 /* LZBBubbleTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = B137737A1D1E2D0F007DBF80 /* LZBBubbleTransition.m */; };
+		B13773861D1E3126007DBF80 /* LZBBaseTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = B13773851D1E3126007DBF80 /* LZBBaseTransition.m */; };
 		B190E8191D0FA4A800963035 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B190E8181D0FA4A800963035 /* Assets.xcassets */; };
 		B190E81C1D0FA4A800963035 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B190E81A1D0FA4A800963035 /* LaunchScreen.storyboard */; };
 		B190E8521D0FA6A200963035 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B190E8361D0FA6A200963035 /* AppDelegate.m */; };
@@ -88,6 +92,14 @@
 		B129DD8C1D1A7913007A08C6 /* headView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = headView.m; sourceTree = "<group>"; };
 		B129DD8E1D1B8E1A007A08C6 /* FebruaryTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FebruaryTool.h; sourceTree = "<group>"; };
 		B129DD8F1D1B8E1A007A08C6 /* FebruaryTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FebruaryTool.m; sourceTree = "<group>"; };
+		B129DD911D1CC750007A08C6 /* SettingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingController.h; sourceTree = "<group>"; };
+		B129DD921D1CC750007A08C6 /* SettingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingController.m; sourceTree = "<group>"; };
+		B129DD941D1CD545007A08C6 /* TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
+		B129DD951D1CD545007A08C6 /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
+		B13773791D1E2D0F007DBF80 /* LZBBubbleTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZBBubbleTransition.h; sourceTree = "<group>"; };
+		B137737A1D1E2D0F007DBF80 /* LZBBubbleTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZBBubbleTransition.m; sourceTree = "<group>"; };
+		B13773841D1E3126007DBF80 /* LZBBaseTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZBBaseTransition.h; sourceTree = "<group>"; };
+		B13773851D1E3126007DBF80 /* LZBBaseTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZBBaseTransition.m; sourceTree = "<group>"; };
 		B190E8091D0FA4A800963035 /* KEEPING.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KEEPING.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B190E8181D0FA4A800963035 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B190E81B1D0FA4A800963035 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -239,6 +251,17 @@
 			path = ../../../../../musicPlay/musicPlay/Classes/Other/JinnPopMenu;
 			sourceTree = "<group>";
 		};
+		B13773781D1E2D0F007DBF80 /* Bubble */ = {
+			isa = PBXGroup;
+			children = (
+				B13773841D1E3126007DBF80 /* LZBBaseTransition.h */,
+				B13773851D1E3126007DBF80 /* LZBBaseTransition.m */,
+				B13773791D1E2D0F007DBF80 /* LZBBubbleTransition.h */,
+				B137737A1D1E2D0F007DBF80 /* LZBBubbleTransition.m */,
+			);
+			path = Bubble;
+			sourceTree = "<group>";
+		};
 		B190E8001D0FA4A800963035 = {
 			isa = PBXGroup;
 			children = (
@@ -283,7 +306,7 @@
 				B190E8921D12AA9500963035 /* Create */,
 				B190E8551D0FA7B300963035 /* Login */,
 				B190E8241D0FA6A200963035 /* Groups */,
-				B190E8281D0FA6A200963035 /* Heme */,
+				B190E8281D0FA6A200963035 /* Home */,
 				B190E82C1D0FA6A200963035 /* Main */,
 				B190E8301D0FA6A200963035 /* Menu */,
 				B190E8341D0FA6A200963035 /* Other */,
@@ -334,13 +357,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		B190E8281D0FA6A200963035 /* Heme */ = {
+		B190E8281D0FA6A200963035 /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				B190E8291D0FA6A200963035 /* Controller */,
 				B190E82A1D0FA6A200963035 /* Model */,
 				B190E82B1D0FA6A200963035 /* View */,
 			);
+			name = Home;
 			path = Heme;
 			sourceTree = "<group>";
 		};
@@ -387,6 +411,8 @@
 			children = (
 				B190E8781D114DE900963035 /* MainController.h */,
 				B190E8791D114DE900963035 /* MainController.m */,
+				B129DD941D1CD545007A08C6 /* TabBarController.h */,
+				B129DD951D1CD545007A08C6 /* TabBarController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -543,6 +569,8 @@
 		B190E8421D0FA6A200963035 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B129DD911D1CC750007A08C6 /* SettingController.h */,
+				B129DD921D1CC750007A08C6 /* SettingController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -641,6 +669,7 @@
 		B190E84D1D0FA6A200963035 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				B13773781D1E2D0F007DBF80 /* Bubble */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -939,12 +968,14 @@
 				B190E8D41D17D51500963035 /* TimelineCell.m in Sources */,
 				B190E8BF1D14EC1300963035 /* nextCollectionCell.m in Sources */,
 				B190E89E1D138FF300963035 /* CreateCell.m in Sources */,
+				B129DD931D1CC750007A08C6 /* SettingController.m in Sources */,
 				B190E8A81D13A2E300963035 /* ListsController.m in Sources */,
 				B190E86D1D11071B00963035 /* SignUpCell.m in Sources */,
 				B190E85E1D0FDAB200963035 /* WSPaymentCircleView.m in Sources */,
 				B190E8B01D13EE5D00963035 /* OverViewController.m in Sources */,
 				B190E8CC1D17CA1500963035 /* ProfileCell.m in Sources */,
 				B190E8D81D17E2B500963035 /* WalkthroughViewController.m in Sources */,
+				B13773801D1E2D0F007DBF80 /* LZBBubbleTransition.m in Sources */,
 				B129DD651D18D9C0007A08C6 /* CardScrollView.m in Sources */,
 				B190E8691D10F44900963035 /* SignUpController.m in Sources */,
 				B129DD891D1A6C6B007A08C6 /* CalendarCell.m in Sources */,
@@ -968,7 +999,9 @@
 				B190E87D1D1158A200963035 /* RoundButton.m in Sources */,
 				B190E8771D114BA000963035 /* HomeController.m in Sources */,
 				B129DD901D1B8E1A007A08C6 /* FebruaryTool.m in Sources */,
+				B129DD961D1CD545007A08C6 /* TabBarController.m in Sources */,
 				B190E87A1D114DE900963035 /* MainController.m in Sources */,
+				B13773861D1E3126007DBF80 /* LZBBaseTransition.m in Sources */,
 				B190E85B1D0FA7D500963035 /* LoginController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

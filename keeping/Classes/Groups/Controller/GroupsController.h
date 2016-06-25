@@ -10,4 +10,6 @@
 
 @interface GroupsController : UIViewController
 
++(instancetype)getGroupsObject;
+
 @end
