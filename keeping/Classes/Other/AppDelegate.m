@@ -11,6 +11,8 @@
 #import "MainController.h"
 #import "TabBarController.h"
 #import "HomeController.h"
+#import "SettingController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -31,7 +33,7 @@
     TabBarController* tab = [[TabBarController alloc]init];
     
 //    self.window.rootViewController = [[HomeController alloc]init];
-    self.window.rootViewController = tab;
+    self.window.rootViewController = [SettingController getSettingObject];
     self.window.backgroundColor = [UIColor whiteColor];
     
     [self.window makeKeyAndVisible];
