@@ -31,6 +31,8 @@
 
 @property(nonatomic,strong)NSArray* titles;
 
+@property(nonatomic,strong)UILabel* tableHeaderView;
+
 @end
 NSString* SCell = @"cell";
 @implementation SettingController
@@ -111,7 +113,11 @@ NSString* SCell = @"cell";
     [self.tableView registerNib:[UINib nibWithNibName:@"SignUpCell" bundle:nil] forCellReuseIdentifier:SCell];
     [self.view addSubview:self.tableView];
     
-    self.tableView.backgroundColor = [UIColor orangeColor];
+    self.tableHeaderView = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, kSCREEN_SIZE.width, 80)];
+    self.tableHeaderView.backgroundColor = kCOLOR_RGB(248, 248, 248);
+    self.tableHeaderView.text = @"    GENERAL";
+    self.tableHeaderView.font = kFONT(15);
+    self.tableView.tableHeaderView = self.tableHeaderView;
 }
 
 -(void)addAutolayout{
@@ -184,6 +190,8 @@ NSString* SCell = @"cell";
         }
     }
     
+    
+    
     return cell;
 }
 
@@ -205,16 +213,20 @@ NSString* SCell = @"cell";
         date.appearance.resultCallBack = ^(KSDatePicker* datePicker,NSDate* currentDate,KSDatePickerButtonType buttonType)
         {
             @strongify(self);
-            textField.alpha = 1;
-            NSLog(@"%@",[self getCustemDateWithDate:currentDate]);
-            textField.text = [self getCustemDateWithDate:currentDate];
-            self.date = textField.text;
+            
+            if (buttonType == KSDatePickerButtonCommit) {
+                textField.alpha = 1;
+                NSLog(@"%@",[self getCustemDateWithDate:currentDate]);
+                textField.text = [self getCustemDateWithDate:currentDate];
+                self.date = textField.text;
+            }
             
         };
     }else if (indexPath.row == 2){
         UITextField* textField = [self.tableView viewWithTag:(100 + indexPath.row)];
         textField.secureTextEntry = YES;
     }
+    
 }
 /**
  *  取得自定义的时间字符串
