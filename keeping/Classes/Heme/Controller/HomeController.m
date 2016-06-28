@@ -11,6 +11,7 @@
 #import "HomeDateView.h"
 #import "MenuController.h"
 #import "LZBBubbleTransition.h"
+#import "FebruaryTool.h"
 
 @interface HomeController ()
 
@@ -51,7 +52,7 @@
 
 -(NSArray *)massages{
     if (!_massages) {
-        _massages = @[@"Good Morning!",@"Good Afternoon!",@"Good evening!"];
+        _massages = @[@"Good Morning!",@"Good Afternoon!",@"Good Evening!"];
     }
     return _massages;
 }
@@ -195,29 +196,65 @@
 
         
     }];
+    
+    
+    UISwipeGestureRecognizer* swipe = [[UISwipeGestureRecognizer alloc]init];
+    swipe.direction = UISwipeGestureRecognizerDirectionUp;
+    [swipe.rac_gestureSignal subscribeNext:^(id x) {
+        NSLog(@"激发手势");
+        
+        CATransition* transition = [CATransition animation];
+        transition.duration = 0.8;
+        transition.type = @"cube";
+        transition.subtype = @"fromTop";
+        
+        self.tabBarController.selectedIndex = 1;
+        
+        [self.tabBarController.view.layer addAnimation:transition forKey:nil];
+        
+        
+    }];
+    
+    [self.view addGestureRecognizer:swipe];
 }
 
 -(void)checkMassage{
     
     NSDateFormatter* formatter = [[NSDateFormatter alloc]init];
     formatter.dateFormat = @"hh";
+    
     NSInteger time = [[formatter stringFromDate:[NSDate date]] integerValue];
     
-    if (5 < time || time < 11) {
+    NSLog(@"--%ld--",time);
+    
+    if (5 < time && time < 10) {
         self.massage.text = self.massages[0];
-    }else if (11 < time || time < 17){
+    }else if (11 <= time && time < 17){
         self.massage.text = self.massages[1];
     }else{
         self.massage.text = self.massages[2];
     }
+    
+    self.dateView.dateLabel.text = [NSString stringWithFormat:@"%ld",[FebruaryTool getCurrentDay]];
+    self.dateView.timeLabel.text = [NSString stringWithFormat:@"%ld",[FebruaryTool getCurrentHour]];
+    self.dateView.week.text = [NSString stringWithFormat:@"%@",[FebruaryTool getWeekDay]];
+    
+    NSArray* arr = @[@"January",
+                   @"February",
+                   @"March",
+                   @"April",
+                   @"May",
+                   @"June",
+                   @"July",
+                   @"August",
+                   @"September",
+                   @"October",
+                   @"November",
+                   @"December"];
+    
+    NSString* month = arr[[FebruaryTool getCurrentMonth] - 1];
+    self.dateMassage.text = [NSString stringWithFormat:@"%@ %ld",month,[FebruaryTool getCurrentYear]];
 }
-
-
-
-
-//-(UIStatusBarStyle)preferredStatusBarStyle{
-//    return UIStatusBarStyleLightContent;
-//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

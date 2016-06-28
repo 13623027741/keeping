@@ -33,7 +33,7 @@
     TabBarController* tab = [[TabBarController alloc]init];
     
 //    self.window.rootViewController = [[HomeController alloc]init];
-    self.window.rootViewController = [SettingController getSettingObject];
+    self.window.rootViewController = tab;
     self.window.backgroundColor = [UIColor whiteColor];
     
     [self.window makeKeyAndVisible];

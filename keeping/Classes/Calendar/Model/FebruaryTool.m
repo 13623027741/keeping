@@ -137,39 +137,36 @@
     for (NSInteger i = 1; i <= day; i++) {
         [arr addObject:@(i)];
     }
-    
-//    NSInteger count = [FebruaryTool getWeekWithDay] - 1;
-//    
-//    NSMutableArray* arr1 = [NSMutableArray array];
-//    
-//    NSInteger temp = [FebruaryTool getDayCountWithLastMonth];
-//    
-//    for (NSInteger i = 0; i < count; i++) {
-//        [arr1 addObject:@(temp - count + i)];
-//    }
-//    
-//    NSMutableArray* arr2 = [NSMutableArray array];
-//    
-//    count = 35 - arr.count - arr1.count;
-//    
-//    for (NSInteger i = 1; i <= count; i++) {
-//        [arr2 addObject:@(i)];
-//    }
-//    
-//    NSMutableArray* arr3 = [NSMutableArray array];
-//    
-//    for (NSNumber* num in arr1) {
-//        [arr3 addObject:num];
-//    }
-//    
-//    for (NSNumber* num in arr) {
-//        [arr3 addObject:num];
-//    }
-//    for (NSNumber* num in arr2) {
-//        [arr3 addObject:num];
-//    }
-//    return arr3;
     return arr;
+}
+
++(NSInteger)getCurrentHour{
+    
+    NSDateFormatter* formatter = [[NSDateFormatter alloc]init];
+    formatter.dateFormat = @"hh";
+    NSString* dateStr = [formatter stringFromDate:[NSDate date]];
+    
+    return [dateStr integerValue];
+}
+
++(NSString*)getWeekDay{
+    
+    NSDictionary* weeks = @{@"星期日":@"MON",
+                            @"星期一":@"TUES",
+                            @"星期二":@"WEDNES",
+                            @"星期三":@"THURS",
+                            @"星期四":@"FRI",
+                            @"星期五":@"SATUR",
+                            @"星期天":@"SUN"
+                            };
+    
+    NSDateFormatter * dateFormatter = [[NSDateFormatter alloc] init] ;
+    dateFormatter.dateFormat = @"EEEE";
+    
+    NSDate* date = [NSDate date];
+    
+     return [weeks objectForKey:[dateFormatter stringFromDate:date]];
+    
 }
 
 @end
