@@ -8,9 +8,28 @@
 
 #import "AppDelegate.h"
 #import "WalkthroughViewController.h"
-#import "MainController.h"
 #import "TabBarController.h"
 #import "HomeController.h"
+#import "SettingController.h"
+#import "FebruaryController.h"
+#import "CreateController.h"
+#import "ListsController.h"
+#import "OverViewController.h"
+#import "TimelineController.h"
+#import "GroupsController.h"
+#import "ProfileController.h"
+
+/*
+ [HomeController getHomeObject],           0
+ [FebruaryController getxCalendarObject],  1
+ [CreateController getxCreateObject],      2
+ [ListsController getxListsObject],        3
+ [OverViewController getOverViewObject],   4
+ [TimelineController getTimelineObject],   5
+ [GroupsController getxGroupsObject],      6
+ [ProfileController getProfileObject]      7
+ */
+
 @interface AppDelegate ()
 
 @end
@@ -24,14 +43,7 @@
     
     
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    
-//    self.window.rootViewController = [[WalkthroughViewController alloc]init];
-//    self.window.rootViewController = [[TabBarController alloc]init];
-    
-    TabBarController* tab = [[TabBarController alloc]init];
-    
-//    self.window.rootViewController = [[HomeController alloc]init];
-    self.window.rootViewController = tab;
+    self.window.rootViewController = [[TabBarController alloc]init];
     self.window.backgroundColor = [UIColor whiteColor];
     
     [self.window makeKeyAndVisible];

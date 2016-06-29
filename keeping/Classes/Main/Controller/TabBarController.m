@@ -15,7 +15,6 @@
 #import "OverViewController.h"
 #import "ProfileController.h"
 #import "TimelineController.h"
-#import "MainController.h"
 #import "FebruaryController.h"
 
 @interface TabBarController ()
@@ -24,37 +23,31 @@
 
 @implementation TabBarController
 
+-(instancetype)init{
+    if (self == [super init]) {
+        self.viewControllers = @[
+                                 [HomeController getHomeObject],
+                                 [OverViewController getOverViewObject],
+                                 [GroupsController getGroupsObject],
+                                 [ProfileController getProfileObject],
+                                 [TimelineController getTimelineObject],
+                                 ];
+        
+        
+        self.tabBar.hidden = YES;
+    }
+    
+    
+    
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self addViewController];
     
-    self.tabBar.hidden = YES;
-}
-
--(void)addViewController{
-    
-    
-    self.viewControllers = @[
-                             [HomeController getHomeObject],
-                             [FebruaryController getxCalendarObject],
-                             [CreateController getxCreateObject],
-                             [ListsController getxListsObject],
-                             [OverViewController getOverViewObject],
-                             [TimelineController getTimelineObject],
-                             [GroupsController getGroupsObject],
-                             [ProfileController getProfileObject]
-                             ];
     
 }
-
--(MainController*)navigationControllerWithViewController:(UIViewController*)viewController{
-    viewController.tabBarItem.title = @"111";
-    MainController* vc = [[MainController alloc]initWithRootViewController:viewController];
-    
-    return vc;
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

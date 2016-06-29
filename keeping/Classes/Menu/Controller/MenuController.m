@@ -33,7 +33,7 @@
 
 
 -(void)awakeFromNib{
-    self.MyIconButtton.layer.cornerRadius = 15;
+    self.MyIconButtton.layer.cornerRadius = 25;
     self.MyIconButtton.backgroundColor = [UIColor orangeColor];
     
     
@@ -75,29 +75,16 @@
         [self pushViewControllerWithIndex:0];
     }];
     
-    [[self.CalendarButton rac_signalForControlEvents:UIControlEventTouchUpInside]
-    subscribeNext:^(id x) {
-        NSLog(@"返回日历");
-        [self pushViewControllerWithIndex:1];
-    }];
-    
     [[self.OverviewButton rac_signalForControlEvents:UIControlEventTouchUpInside]
     subscribeNext:^(id x) {
         NSLog(@"返回面板");
-        [self pushViewControllerWithIndex:4];
+        [self pushViewControllerWithIndex:1];
     }];
     
     [[self.GroupsButton rac_signalForControlEvents:UIControlEventTouchUpInside]
     subscribeNext:^(id x) {
         NSLog(@"返回组");
-        [self pushViewControllerWithIndex:6];
-        
-    }];
-    
-    [[self.ListsButton rac_signalForControlEvents:UIControlEventTouchUpInside]
-    subscribeNext:^(id x) {
-        NSLog(@"返回列表");
-        [self pushViewControllerWithIndex:3];
+        [self pushViewControllerWithIndex:2];
         
     }];
     
@@ -105,13 +92,13 @@
     subscribeNext:^(id x) {
         NSLog(@"返回我的");
         
-        [self pushViewControllerWithIndex:7];
+        [self pushViewControllerWithIndex:3];
     }];
     
     [[self.TimelineButton rac_signalForControlEvents:UIControlEventTouchUpInside]
     subscribeNext:^(id x) {
         NSLog(@"返回时间轴");
-        [self pushViewControllerWithIndex:5];
+        [self pushViewControllerWithIndex:4];
         
     }];
     

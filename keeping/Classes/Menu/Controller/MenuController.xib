@@ -8,206 +8,169 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <viewController id="3hh-Fe-DT5" customClass="MenuController">
+        <viewController id="kYe-5c-Rpr" customClass="MenuController">
             <layoutGuides>
-                <viewControllerLayoutGuide type="top" id="6Yk-8Q-nPY"/>
-                <viewControllerLayoutGuide type="bottom" id="DNf-B0-Y5Y"/>
+                <viewControllerLayoutGuide type="top" id="HaH-pw-5aJ"/>
+                <viewControllerLayoutGuide type="bottom" id="Suw-ik-l8c"/>
             </layoutGuides>
-            <view key="view" contentMode="scaleToFill" id="YmH-fV-Vwm">
+            <view key="view" contentMode="scaleToFill" id="sXX-Qf-fJl">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="natigation_background" translatesAutoresizingMaskIntoConstraints="NO" id="myw-c3-HCJ">
-                        <rect key="frame" x="-8" y="0.0" width="336" height="568"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="natigation_background" translatesAutoresizingMaskIntoConstraints="NO" id="oNH-0q-N6K">
+                        <rect key="frame" x="-4" y="0.0" width="328" height="568"/>
                     </imageView>
-                    <button opaque="NO" tag="210" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3wN-qQ-vpw">
-                        <rect key="frame" x="66" y="493" width="20" height="20"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Msh-JU-wlo">
+                        <rect key="frame" x="26" y="40" width="20" height="20"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="20" id="SDb-E7-xsK"/>
-                            <constraint firstAttribute="width" constant="20" id="tbh-NC-ENv"/>
+                            <constraint firstAttribute="height" constant="20" id="C36-ok-e8f"/>
+                            <constraint firstAttribute="width" constant="20" id="hG0-LG-h4g"/>
                         </constraints>
-                        <state key="normal" image="icon_setting">
-                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        </state>
+                        <state key="normal" image="close"/>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOG OUT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vgr-ZV-HXR">
-                        <rect key="frame" x="204" y="518" width="80" height="20"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EVr-8u-zsR" customClass="RoundButton">
+                        <rect key="frame" x="244" y="30" width="50" height="50"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="20" id="IlV-XA-wVK"/>
-                            <constraint firstAttribute="width" constant="80" id="VPE-6k-jm7"/>
+                            <constraint firstAttribute="height" constant="50" id="Crj-Aw-4pA"/>
+                            <constraint firstAttribute="width" constant="50" id="ZWL-2m-nxa"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
-                        <color key="textColor" red="0.73725490199999999" green="0.74117647060000003" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <button opaque="NO" tag="211" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7cA-Rh-oBO">
-                        <rect key="frame" x="234" y="493" width="20" height="20"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="20" id="47l-1X-oQe"/>
-                            <constraint firstAttribute="width" constant="20" id="GvC-Kj-6BL"/>
-                        </constraints>
-                        <state key="normal" image="logout">
-                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        </state>
+                        <state key="normal" image="icon_img"/>
                     </button>
-                    <button opaque="NO" tag="205" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IaA-m2-66I">
-                        <rect key="frame" x="120" y="260" width="80" height="30"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="80" id="3eN-1r-hnu"/>
-                            <constraint firstAttribute="height" constant="30" id="Q7R-gr-iwM"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
-                        <state key="normal" title="Groups">
-                            <color key="titleColor" red="0.73725490199999999" green="0.74117647060000003" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
-                        </state>
-                    </button>
-                    <button opaque="NO" tag="202" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bwh-Kc-KEq">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="127-G4-cJ2">
                         <rect key="frame" x="120" y="110" width="80" height="30"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="80" id="Ebc-FJ-ini"/>
-                            <constraint firstAttribute="height" constant="30" id="eJH-9h-zFy"/>
+                            <constraint firstAttribute="width" constant="80" id="Ruh-84-Q9C"/>
+                            <constraint firstAttribute="height" constant="30" id="vmu-a0-90V"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                         <state key="normal" title="Home">
                             <color key="titleColor" red="0.73725490199999999" green="0.74117647060000003" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SETTINGS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bHG-hU-4a8">
-                        <rect key="frame" x="36" y="518" width="80" height="20"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="80" id="N0r-BE-wqa"/>
-                            <constraint firstAttribute="height" constant="20" id="s2Z-Qy-tql"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
-                        <color key="textColor" red="0.73725490199999999" green="0.74117647060000003" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <button opaque="NO" tag="201" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P2b-HM-2BU" customClass="RoundButton">
-                        <rect key="frame" x="274" y="40" width="30" height="30"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="30" id="Ij7-JJ-pib"/>
-                            <constraint firstAttribute="width" constant="30" id="Nna-JZ-B28"/>
-                        </constraints>
-                        <state key="normal" image="icon_img">
-                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        </state>
-                    </button>
-                    <button opaque="NO" tag="203" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ar-By-CgL">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rLS-5y-cLd">
                         <rect key="frame" x="120" y="160" width="80" height="30"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="80" id="1Ys-ru-tm7"/>
-                            <constraint firstAttribute="height" constant="30" id="jxy-bD-mb2"/>
+                            <constraint firstAttribute="height" constant="30" id="0ks-7f-1dz"/>
+                            <constraint firstAttribute="width" constant="80" id="kmk-Wh-dbO"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
-                        <state key="normal" title="Calendar">
-                            <color key="titleColor" red="0.73725490199999999" green="0.74117647060000003" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
-                        </state>
-                    </button>
-                    <button opaque="NO" tag="206" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fIo-T8-aFs">
-                        <rect key="frame" x="120" y="310" width="80" height="30"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="30" id="6zD-LA-4Pc"/>
-                            <constraint firstAttribute="width" constant="80" id="qwL-M6-ZfZ"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
-                        <state key="normal" title="Lists">
-                            <color key="titleColor" red="0.73725490199999999" green="0.74117647060000003" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
-                        </state>
-                    </button>
-                    <button opaque="NO" tag="204" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8af-PN-GhO">
-                        <rect key="frame" x="120" y="210" width="80" height="30"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="30" id="3wZ-En-ToU"/>
-                            <constraint firstAttribute="width" constant="80" id="VTS-gl-G6U"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                         <state key="normal" title="Overview">
                             <color key="titleColor" red="0.73725490199999999" green="0.74117647060000003" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
                     </button>
-                    <button opaque="NO" tag="209" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qcp-aQ-kfD">
-                        <rect key="frame" x="120" y="410" width="80" height="30"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2qb-9q-Xzg">
+                        <rect key="frame" x="120" y="210" width="80" height="30"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="30" id="OHj-T0-F2B"/>
-                            <constraint firstAttribute="width" constant="80" id="Qx9-WR-ht4"/>
+                            <constraint firstAttribute="width" constant="80" id="3qb-IO-gWr"/>
+                            <constraint firstAttribute="height" constant="30" id="nIO-Fh-CIQ"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
-                        <state key="normal" title="Timeline">
+                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                        <state key="normal" title="Groups">
                             <color key="titleColor" red="0.73725490199999999" green="0.74117647060000003" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
                     </button>
-                    <button opaque="NO" tag="208" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TXJ-Uh-hHg">
-                        <rect key="frame" x="120" y="360" width="80" height="30"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CGf-8v-c70">
+                        <rect key="frame" x="120" y="260" width="80" height="30"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="80" id="mZr-ij-dbC"/>
-                            <constraint firstAttribute="height" constant="30" id="rA2-S6-jeb"/>
+                            <constraint firstAttribute="width" constant="80" id="a4R-xJ-cIf"/>
+                            <constraint firstAttribute="height" constant="30" id="mOc-Mr-ybX"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                         <state key="normal" title="Profile">
                             <color key="titleColor" red="0.73725490199999999" green="0.74117647060000003" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
                     </button>
-                    <button opaque="NO" tag="200" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d4q-rT-z8u">
-                        <rect key="frame" x="26" y="40" width="20" height="20"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fpI-8q-tiE">
+                        <rect key="frame" x="120" y="310" width="80" height="30"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="20" id="LDm-cN-6Zp"/>
-                            <constraint firstAttribute="height" constant="20" id="owd-3N-taw"/>
+                            <constraint firstAttribute="width" constant="80" id="Ba1-7N-5BV"/>
+                            <constraint firstAttribute="height" constant="30" id="Jzi-Pt-eHH"/>
                         </constraints>
-                        <state key="normal" image="close">
+                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                        <state key="normal" title="Timeline">
+                            <color key="titleColor" red="0.73725490199999999" green="0.74117647060000003" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SRr-TB-gkv">
+                        <rect key="frame" x="36" y="498" width="90" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="EyE-wf-MPP"/>
+                            <constraint firstAttribute="width" constant="90" id="cfU-sN-xJ1"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
+                        <state key="normal" title="SETTINGS">
                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
                     </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OWc-Db-ChX">
+                        <rect key="frame" x="215" y="498" width="69" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="hDx-lF-xzL"/>
+                            <constraint firstAttribute="width" constant="69" id="pck-0s-eyC"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
+                        <state key="normal" title="LOG OUT">
+                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                    </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_setting" translatesAutoresizingMaskIntoConstraints="NO" id="Nan-Ht-SeF">
+                        <rect key="frame" x="71" y="478" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="gbx-FJ-Tfd"/>
+                            <constraint firstAttribute="width" constant="20" id="pez-hQ-zmb"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logout" translatesAutoresizingMaskIntoConstraints="NO" id="SHo-oG-Yty">
+                        <rect key="frame" x="239" y="478" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="BeA-4u-X78"/>
+                            <constraint firstAttribute="width" constant="20" id="wz9-KV-0GN"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 <constraints>
-                    <constraint firstItem="TXJ-Uh-hHg" firstAttribute="centerX" secondItem="YmH-fV-Vwm" secondAttribute="centerX" id="0Jd-Jv-e4J"/>
-                    <constraint firstItem="DNf-B0-Y5Y" firstAttribute="top" secondItem="bHG-hU-4a8" secondAttribute="bottom" constant="30" id="0fd-HF-hJK"/>
-                    <constraint firstItem="8af-PN-GhO" firstAttribute="centerX" secondItem="YmH-fV-Vwm" secondAttribute="centerX" id="1x0-67-R7T"/>
-                    <constraint firstItem="P2b-HM-2BU" firstAttribute="top" secondItem="6Yk-8Q-nPY" secondAttribute="bottom" constant="20" id="5cW-mc-ssV"/>
-                    <constraint firstItem="Qcp-aQ-kfD" firstAttribute="centerX" secondItem="YmH-fV-Vwm" secondAttribute="centerX" id="5lF-Bj-OX1"/>
-                    <constraint firstItem="myw-c3-HCJ" firstAttribute="top" secondItem="6Yk-8Q-nPY" secondAttribute="bottom" constant="-20" id="7fY-58-cqN"/>
-                    <constraint firstItem="IaA-m2-66I" firstAttribute="top" secondItem="8af-PN-GhO" secondAttribute="bottom" constant="20" id="9cB-DI-17X"/>
-                    <constraint firstItem="P2b-HM-2BU" firstAttribute="trailing" secondItem="YmH-fV-Vwm" secondAttribute="trailingMargin" id="Dsg-tg-1rP"/>
-                    <constraint firstItem="Vgr-ZV-HXR" firstAttribute="centerX" secondItem="7cA-Rh-oBO" secondAttribute="centerX" id="E3A-xR-GtY"/>
-                    <constraint firstItem="d4q-rT-z8u" firstAttribute="leading" secondItem="YmH-fV-Vwm" secondAttribute="leadingMargin" constant="10" id="EA5-ay-EDe"/>
-                    <constraint firstItem="bHG-hU-4a8" firstAttribute="leading" secondItem="YmH-fV-Vwm" secondAttribute="leadingMargin" constant="20" id="EI8-d3-cxg"/>
-                    <constraint firstItem="TXJ-Uh-hHg" firstAttribute="top" secondItem="fIo-T8-aFs" secondAttribute="bottom" constant="20" id="K3t-mY-lXu"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="myw-c3-HCJ" secondAttribute="trailing" constant="-24" id="KLP-GF-Ad6"/>
-                    <constraint firstItem="DNf-B0-Y5Y" firstAttribute="top" secondItem="Vgr-ZV-HXR" secondAttribute="bottom" constant="30" id="P7X-qR-fzD"/>
-                    <constraint firstItem="IaA-m2-66I" firstAttribute="centerX" secondItem="YmH-fV-Vwm" secondAttribute="centerX" id="RlY-6Y-jP5"/>
-                    <constraint firstItem="Bwh-Kc-KEq" firstAttribute="centerX" secondItem="YmH-fV-Vwm" secondAttribute="centerX" id="SSP-pd-tIA"/>
-                    <constraint firstItem="fIo-T8-aFs" firstAttribute="top" secondItem="IaA-m2-66I" secondAttribute="bottom" constant="20" id="UIe-aI-aoa"/>
-                    <constraint firstItem="Vgr-ZV-HXR" firstAttribute="top" secondItem="7cA-Rh-oBO" secondAttribute="bottom" constant="5" id="Up4-J4-eYc"/>
-                    <constraint firstItem="bHG-hU-4a8" firstAttribute="centerX" secondItem="3wN-qQ-vpw" secondAttribute="centerX" id="XFP-yQ-0Be"/>
-                    <constraint firstItem="myw-c3-HCJ" firstAttribute="leading" secondItem="YmH-fV-Vwm" secondAttribute="leadingMargin" constant="-24" id="XGN-J2-gqT"/>
-                    <constraint firstItem="Bwh-Kc-KEq" firstAttribute="top" secondItem="6Yk-8Q-nPY" secondAttribute="bottom" constant="90" id="aCw-HU-mfw"/>
-                    <constraint firstItem="Qcp-aQ-kfD" firstAttribute="top" secondItem="TXJ-Uh-hHg" secondAttribute="bottom" constant="20" id="iFa-J0-nvR"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="Vgr-ZV-HXR" secondAttribute="trailing" constant="20" id="mMg-Ee-pcA"/>
-                    <constraint firstItem="bHG-hU-4a8" firstAttribute="top" secondItem="3wN-qQ-vpw" secondAttribute="bottom" constant="5" id="mUp-lj-dke"/>
-                    <constraint firstItem="8af-PN-GhO" firstAttribute="top" secondItem="9Ar-By-CgL" secondAttribute="bottom" constant="20" id="qaS-yW-VEr"/>
-                    <constraint firstItem="d4q-rT-z8u" firstAttribute="top" secondItem="6Yk-8Q-nPY" secondAttribute="bottom" constant="20" id="ulv-pP-wGe"/>
-                    <constraint firstItem="9Ar-By-CgL" firstAttribute="top" secondItem="Bwh-Kc-KEq" secondAttribute="bottom" constant="20" id="v9b-yv-Q8Q"/>
-                    <constraint firstItem="fIo-T8-aFs" firstAttribute="centerX" secondItem="YmH-fV-Vwm" secondAttribute="centerX" id="wdw-gV-Ahi"/>
-                    <constraint firstItem="DNf-B0-Y5Y" firstAttribute="top" secondItem="myw-c3-HCJ" secondAttribute="bottom" id="x6l-2j-Sgd"/>
-                    <constraint firstItem="9Ar-By-CgL" firstAttribute="centerX" secondItem="YmH-fV-Vwm" secondAttribute="centerX" id="xYl-Yd-lsH"/>
+                    <constraint firstItem="oNH-0q-N6K" firstAttribute="top" secondItem="sXX-Qf-fJl" secondAttribute="topMargin" id="1Fq-3z-lMV"/>
+                    <constraint firstItem="rLS-5y-cLd" firstAttribute="centerX" secondItem="sXX-Qf-fJl" secondAttribute="centerX" id="1hm-e0-Uwg"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="OWc-Db-ChX" secondAttribute="trailing" constant="20" id="2Bf-w1-E2a"/>
+                    <constraint firstItem="OWc-Db-ChX" firstAttribute="top" secondItem="SHo-oG-Yty" secondAttribute="bottom" id="4a8-LT-7rN"/>
+                    <constraint firstItem="2qb-9q-Xzg" firstAttribute="centerX" secondItem="sXX-Qf-fJl" secondAttribute="centerX" id="6G1-Bg-JH6"/>
+                    <constraint firstItem="SRr-TB-gkv" firstAttribute="leading" secondItem="sXX-Qf-fJl" secondAttribute="leadingMargin" constant="20" id="DCI-rw-tM5"/>
+                    <constraint firstItem="EVr-8u-zsR" firstAttribute="top" secondItem="HaH-pw-5aJ" secondAttribute="bottom" constant="10" id="DNx-en-nk6"/>
+                    <constraint firstItem="Suw-ik-l8c" firstAttribute="top" secondItem="SRr-TB-gkv" secondAttribute="bottom" constant="40" id="Fjv-aT-wXK"/>
+                    <constraint firstItem="SRr-TB-gkv" firstAttribute="centerX" secondItem="Nan-Ht-SeF" secondAttribute="centerX" id="HJe-Hv-IkM"/>
+                    <constraint firstItem="2qb-9q-Xzg" firstAttribute="top" secondItem="rLS-5y-cLd" secondAttribute="bottom" constant="20" id="Ji7-hk-Xey"/>
+                    <constraint firstItem="Msh-JU-wlo" firstAttribute="leading" secondItem="sXX-Qf-fJl" secondAttribute="leadingMargin" constant="10" id="M9G-ST-Sck"/>
+                    <constraint firstItem="Suw-ik-l8c" firstAttribute="top" secondItem="OWc-Db-ChX" secondAttribute="bottom" constant="40" id="Ps3-ar-M0d"/>
+                    <constraint firstItem="fpI-8q-tiE" firstAttribute="top" secondItem="CGf-8v-c70" secondAttribute="bottom" constant="20" id="Ua1-73-9Mh"/>
+                    <constraint firstItem="rLS-5y-cLd" firstAttribute="top" secondItem="127-G4-cJ2" secondAttribute="bottom" constant="20" id="VAH-J9-50e"/>
+                    <constraint firstItem="Suw-ik-l8c" firstAttribute="top" secondItem="oNH-0q-N6K" secondAttribute="bottom" id="WCU-bc-QBP"/>
+                    <constraint firstItem="OWc-Db-ChX" firstAttribute="centerX" secondItem="SHo-oG-Yty" secondAttribute="centerX" id="WO1-Am-f0X"/>
+                    <constraint firstItem="fpI-8q-tiE" firstAttribute="centerX" secondItem="sXX-Qf-fJl" secondAttribute="centerX" id="Yqu-BD-B19"/>
+                    <constraint firstItem="CGf-8v-c70" firstAttribute="centerX" secondItem="sXX-Qf-fJl" secondAttribute="centerX" id="agn-Dd-neG"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="oNH-0q-N6K" secondAttribute="trailing" constant="-20" id="axW-4S-pwe"/>
+                    <constraint firstItem="SRr-TB-gkv" firstAttribute="top" secondItem="Nan-Ht-SeF" secondAttribute="bottom" id="bHw-3e-od4"/>
+                    <constraint firstItem="Msh-JU-wlo" firstAttribute="top" secondItem="HaH-pw-5aJ" secondAttribute="bottom" constant="20" id="br6-hV-E5E"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="EVr-8u-zsR" secondAttribute="trailing" constant="10" id="gNe-Jv-BcI"/>
+                    <constraint firstItem="127-G4-cJ2" firstAttribute="top" secondItem="HaH-pw-5aJ" secondAttribute="bottom" constant="90" id="he2-yu-ZD2"/>
+                    <constraint firstItem="127-G4-cJ2" firstAttribute="centerX" secondItem="sXX-Qf-fJl" secondAttribute="centerX" id="lyp-Os-hjV"/>
+                    <constraint firstItem="CGf-8v-c70" firstAttribute="top" secondItem="2qb-9q-Xzg" secondAttribute="bottom" constant="20" id="uCk-Em-9a4"/>
+                    <constraint firstItem="oNH-0q-N6K" firstAttribute="leading" secondItem="sXX-Qf-fJl" secondAttribute="leadingMargin" constant="-20" id="zb7-YD-scW"/>
                 </constraints>
             </view>
-            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <connections>
-                <outlet property="CalendarButton" destination="9Ar-By-CgL" id="beV-Qv-k8e"/>
-                <outlet property="GroupsButton" destination="IaA-m2-66I" id="oM6-ha-isx"/>
-                <outlet property="HomeButton" destination="Bwh-Kc-KEq" id="dUx-mT-xhb"/>
-                <outlet property="ListsButton" destination="fIo-T8-aFs" id="prD-pW-RTk"/>
-                <outlet property="MyIconButtton" destination="P2b-HM-2BU" id="VKK-mN-qBN"/>
-                <outlet property="OverviewButton" destination="8af-PN-GhO" id="fwh-u5-kIs"/>
-                <outlet property="ProfileButton" destination="TXJ-Uh-hHg" id="dEU-e2-icy"/>
-                <outlet property="TimelineButton" destination="Qcp-aQ-kfD" id="ytg-RA-J2S"/>
-                <outlet property="closeButton" destination="d4q-rT-z8u" id="S09-BT-IKh"/>
-                <outlet property="logoutButton" destination="7cA-Rh-oBO" id="XBj-vb-kpa"/>
-                <outlet property="settingButton" destination="3wN-qQ-vpw" id="vn8-5M-37h"/>
+                <outlet property="GroupsButton" destination="2qb-9q-Xzg" id="gUx-wH-MB2"/>
+                <outlet property="HomeButton" destination="127-G4-cJ2" id="R9L-e9-rLI"/>
+                <outlet property="MyIconButtton" destination="EVr-8u-zsR" id="rmL-s7-DEW"/>
+                <outlet property="OverviewButton" destination="rLS-5y-cLd" id="Y6t-9M-2Be"/>
+                <outlet property="ProfileButton" destination="CGf-8v-c70" id="s2n-6v-BXB"/>
+                <outlet property="TimelineButton" destination="fpI-8q-tiE" id="cnA-ZH-QfO"/>
+                <outlet property="closeButton" destination="Msh-JU-wlo" id="Z9L-W4-1wo"/>
+                <outlet property="logoutButton" destination="OWc-Db-ChX" id="Hgl-zY-NU6"/>
+                <outlet property="settingButton" destination="SRr-TB-gkv" id="0F0-c9-m1X"/>
             </connections>
-            <point key="canvasLocation" x="842" y="846"/>
+            <point key="canvasLocation" x="1224" y="768"/>
         </viewController>
     </objects>
     <resources>

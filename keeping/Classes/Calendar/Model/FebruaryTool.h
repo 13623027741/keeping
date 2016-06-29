@@ -23,4 +23,9 @@
 + (NSArray*)getCurrentMonthWithDay;
 
 +(NSInteger)getWeekDayWithMonth:(NSInteger)month;
+
++(NSInteger)getCurrentHour;
+
++(NSString*)getWeekDay;
+
 @end

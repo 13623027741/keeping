@@ -36,7 +36,6 @@
 		B190E8731D11317E00963035 /* KSDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = B190E8701D11317E00963035 /* KSDatePicker.m */; };
 		B190E8741D11317E00963035 /* KSDatePickerAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = B190E8721D11317E00963035 /* KSDatePickerAppearance.m */; };
 		B190E8771D114BA000963035 /* HomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = B190E8761D114BA000963035 /* HomeController.m */; };
-		B190E87A1D114DE900963035 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = B190E8791D114DE900963035 /* MainController.m */; };
 		B190E87D1D1158A200963035 /* RoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B190E87C1D1158A200963035 /* RoundButton.m */; };
 		B190E87F1D1247E500963035 /* HomeDateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B190E87E1D1247E500963035 /* HomeDateView.xib */; };
 		B190E8821D12480700963035 /* HomeDateView.m in Sources */ = {isa = PBXBuildFile; fileRef = B190E8811D12480700963035 /* HomeDateView.m */; };
@@ -124,8 +123,6 @@
 		B190E8721D11317E00963035 /* KSDatePickerAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSDatePickerAppearance.m; sourceTree = "<group>"; };
 		B190E8751D114BA000963035 /* HomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeController.h; sourceTree = "<group>"; };
 		B190E8761D114BA000963035 /* HomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeController.m; sourceTree = "<group>"; };
-		B190E8781D114DE900963035 /* MainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainController.h; sourceTree = "<group>"; };
-		B190E8791D114DE900963035 /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
 		B190E87B1D1158A200963035 /* RoundButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundButton.h; sourceTree = "<group>"; };
 		B190E87C1D1158A200963035 /* RoundButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundButton.m; sourceTree = "<group>"; };
 		B190E87E1D1247E500963035 /* HomeDateView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeDateView.xib; sourceTree = "<group>"; };
@@ -409,8 +406,6 @@
 		B190E82D1D0FA6A200963035 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B190E8781D114DE900963035 /* MainController.h */,
-				B190E8791D114DE900963035 /* MainController.m */,
 				B129DD941D1CD545007A08C6 /* TabBarController.h */,
 				B129DD951D1CD545007A08C6 /* TabBarController.m */,
 			);
@@ -1000,7 +995,6 @@
 				B190E8771D114BA000963035 /* HomeController.m in Sources */,
 				B129DD901D1B8E1A007A08C6 /* FebruaryTool.m in Sources */,
 				B129DD961D1CD545007A08C6 /* TabBarController.m in Sources */,
-				B190E87A1D114DE900963035 /* MainController.m in Sources */,
 				B13773861D1E3126007DBF80 /* LZBBaseTransition.m in Sources */,
 				B190E85B1D0FA7D500963035 /* LoginController.m in Sources */,
 			);

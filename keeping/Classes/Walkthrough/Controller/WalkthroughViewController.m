@@ -5,7 +5,6 @@
 
 #import "WalkthroughViewController.h"
 #import "CardScrollView.h"
-#import "MainController.h"
 #import "HomeController.h"
 #import "MyAnimation.h"
 
@@ -69,11 +68,11 @@
         
         
         
-        MainController* mainVC = [[MainController alloc]initWithRootViewController:[[HomeController alloc]init]];
+        HomeController* home = [[HomeController alloc]init];
         
-        mainVC.transitioningDelegate = self;
+        home.transitioningDelegate = self;
         
-        [self presentViewController:mainVC animated:YES completion:nil];
+        [self presentViewController:home animated:YES completion:nil];
         
     }];
 }

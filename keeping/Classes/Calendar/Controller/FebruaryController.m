@@ -239,6 +239,25 @@ int i = 1;
         MenuController* vc = [[[NSBundle mainBundle]loadNibNamed:@"MenuController" owner:nil options:nil]lastObject];
         [self pushViewController:vc button:self.menuButton];
     }];
+    
+    
+    UISwipeGestureRecognizer* swipe = [[UISwipeGestureRecognizer alloc]init];
+    swipe.direction = UISwipeGestureRecognizerDirectionDown;
+    [swipe.rac_gestureSignal subscribeNext:^(id x) {
+        NSLog(@"激发手势");
+        
+        CATransition* transition = [CATransition animation];
+        transition.duration = 0.8;
+        transition.type = @"cube";
+        transition.subtype = @"fromBottom";
+        
+        self.tabBarController.selectedIndex = 0;
+        
+        [self.tabBarController.view.layer addAnimation:transition forKey:nil];
+        
+        
+    }];
+    [self.view addGestureRecognizer:swipe];
 }
 
 

@@ -160,6 +160,45 @@ static NSString* PCell = @"cell";
         MenuController* menu = kBOUNDLE_SOURCE(@"MenuController");
         [self pushViewController:menu button:self.menuButton];
     }];
+    
+    UISwipeGestureRecognizer* swipe = [[UISwipeGestureRecognizer alloc]init];
+    swipe.direction = UISwipeGestureRecognizerDirectionUp;
+    [swipe.rac_gestureSignal subscribeNext:^(id x) {
+        NSLog(@"向下激发手势");
+        
+        CATransition* transition = [CATransition animation];
+        transition.duration = 0.8;
+        transition.type = @"cube";
+        transition.subtype = @"fromTop";
+        
+        self.tabBarController.selectedIndex = 0;
+        
+        [self.tabBarController.view.layer addAnimation:transition forKey:nil];
+        
+        
+    }];
+    
+    [self.view addGestureRecognizer:swipe];
+    
+    
+    UISwipeGestureRecognizer* swipe1 = [[UISwipeGestureRecognizer alloc]init];
+    swipe1.direction = UISwipeGestureRecognizerDirectionDown;
+    [swipe1.rac_gestureSignal subscribeNext:^(id x) {
+        NSLog(@"向上激发手势");
+        
+        CATransition* transition = [CATransition animation];
+        transition.duration = 0.8;
+        transition.type = @"cube";
+        transition.subtype = @"fromBottom";
+        
+        self.tabBarController.selectedIndex = 3;
+        
+        [self.tabBarController.view.layer addAnimation:transition forKey:nil];
+        
+        
+    }];
+    
+    [self.view addGestureRecognizer:swipe1];
 }
 
 

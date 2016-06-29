@@ -25,10 +25,10 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TUE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhj-RD-Ai6">
-                            <rect key="frame" x="50" y="110" width="50" height="20"/>
+                            <rect key="frame" x="35" y="110" width="80" height="20"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="50" id="JrR-Dv-wv3"/>
-                                <constraint firstAttribute="height" constant="20" id="aXc-ac-Bd3"/>
+                                <constraint firstAttribute="height" constant="20" id="1VP-5T-R6U"/>
+                                <constraint firstAttribute="width" constant="80" id="leh-0J-0gp"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -38,10 +38,11 @@
                     <color key="backgroundColor" red="1" green="0.14430176880000001" blue="0.088745710850000006" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="150" id="ClL-qf-Ra2"/>
-                        <constraint firstItem="fhj-RD-Ai6" firstAttribute="top" secondItem="MBI-s2-0iE" secondAttribute="bottom" constant="10" id="Y6s-Jd-sLy"/>
-                        <constraint firstItem="fhj-RD-Ai6" firstAttribute="centerX" secondItem="TMr-Fd-DGA" secondAttribute="centerX" id="d7F-xK-BXu"/>
+                        <constraint firstItem="fhj-RD-Ai6" firstAttribute="centerX" secondItem="TMr-Fd-DGA" secondAttribute="centerX" id="J1b-Uu-R7h"/>
+                        <constraint firstItem="fhj-RD-Ai6" firstAttribute="top" secondItem="MBI-s2-0iE" secondAttribute="bottom" constant="10" id="eTX-8k-LzF"/>
                         <constraint firstAttribute="height" constant="150" id="gNn-h5-fbb"/>
                         <constraint firstItem="MBI-s2-0iE" firstAttribute="centerX" secondItem="TMr-Fd-DGA" secondAttribute="centerX" id="rBF-XN-rKU"/>
+                        <constraint firstItem="MBI-s2-0iE" firstAttribute="centerX" secondItem="TMr-Fd-DGA" secondAttribute="centerX" id="thy-X3-84U"/>
                         <constraint firstItem="MBI-s2-0iE" firstAttribute="centerY" secondItem="TMr-Fd-DGA" secondAttribute="centerY" id="wyr-ti-Th7"/>
                     </constraints>
                 </view>
