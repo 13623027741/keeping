@@ -29,7 +29,7 @@
 /**
  *  是否完成
  */
-@property(nonatomic,assign)BOOL isComplete;
+@property(nonatomic,assign)NSInteger isComplete;
 
 @property(nonatomic,copy)NSString* date;
 

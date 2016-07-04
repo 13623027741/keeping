@@ -204,7 +204,7 @@
         NSLog(@"向下激发手势");
         
         CATransition* transition = [CATransition animation];
-        transition.duration = 0.8;
+        transition.duration = 0.5;
         transition.type = @"cube";
         transition.subtype = @"fromTop";
         
@@ -224,7 +224,7 @@
         NSLog(@"向上激发手势");
         
         CATransition* transition = [CATransition animation];
-        transition.duration = 0.8;
+        transition.duration = 0.5;
         transition.type = @"cube";
         transition.subtype = @"fromBottom";
         

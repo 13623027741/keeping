@@ -27,4 +27,8 @@
  */
 +(BOOL)isDB;
 
++(BOOL)updateData:(id)data;
+
++(BOOL)delectData:(id)data;
+
 @end

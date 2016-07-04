@@ -39,7 +39,7 @@
     
     FMDatabase* db = [FMData getFMDataBase];
     
-    NSString* sql = @" create table task(id integer primary key autoincrement ,title text not null,massage text not null,time varchar(15),shiduan varchar(15) not null,isCompleted integer date varchar(50) not null)";
+    NSString* sql = @" create table task(id integer primary key autoincrement ,title text not null,massage text not null,time varchar(15),shiduan varchar(15),isCompleted integer,dateStr text)";
     
     if([db executeUpdate:sql]){
         NSLog(@"建表成功");
@@ -57,11 +57,15 @@
     
     overViewItemModel* model = (overViewItemModel*)data;
     
+    NSLog(@"--[(%@)]--",model.date);
+    
+    NSLog(@"-[%@]-[%@]--[%@]--[%@]--[%@]--[%d]----",model.title,model.massage,model.timeStr,model.shiduan,model.date,model.isComplete);
+    
     FMDatabase* db = [FMData getFMDataBase];
     
-    NSString* sql = @" insert into task(title,massage,time,shiduan,isCompleted,date) values(?,?,?,?,?,?)";
+    NSString* sql = @" insert into task(title,massage,time,shiduan,isCompleted,dateStr) values(?,?,?,?,?,?)";
     
-    if ([db executeUpdate:sql,model.title,model.massage,model.shiduan,model.isComplete,model.date]) {
+    if ([db executeUpdate:sql,model.title,model.massage,model.timeStr,model.shiduan,model.isComplete,model.date]) {
         NSLog(@"添加成功");
         [db close];
         return YES;
@@ -78,14 +82,35 @@
     
     FMDatabase* db = [FMData getFMDataBase];
     
-    NSString* sql = @" delect from task where date = (?)";
+    NSString* sql = @" delect from task where date = ?";
     
     if ([db executeUpdate:sql,model.date]) {
-        NSLog(@"添加成功");
+        NSLog(@"删除成功");
         [db close];
         return YES;
     }else{
-        NSLog(@"添加失败");
+        NSLog(@"删除失败");
+        [db close];
+        return NO;
+    }
+}
+
++(BOOL)updateData:(id)data{
+    
+    overViewItemModel* model = (overViewItemModel*)data;
+    
+    FMDatabase* db = [FMData getFMDataBase];
+    
+    NSString* sql = @" update task set isCompleted = ? where dateStr = ? ";
+    
+//    NSString* sql = [NSString stringWithFormat:@"update task set isCompleted = 1 where dateStr = '%@' ",model.date];
+    
+    if ([db executeUpdate:sql,@(model.isComplete),model.date]) {
+        NSLog(@"修改成功");
+        [db close];
+        return YES;
+    }else{
+        NSLog(@"修改失败");
         [db close];
         return NO;
     }
@@ -107,8 +132,8 @@
         NSString* massage = [result stringForColumn:@"massage"];
         NSString* time = [result stringForColumn:@"time"];
         NSString* shiduan = [result stringForColumn:@"shiduan"];
-        NSString* isCompleted = [result stringForColumn:@"isCompleted"];
-        NSString* date = [result stringForColumn:@"date"];
+        BOOL isCompleted = [result boolForColumn:@"isCompleted"];
+        NSString* date = [result stringForColumn:@"dateStr"];
         
         overViewItemModel* model = [[overViewItemModel alloc]init];
         model.title = title;
@@ -119,7 +144,9 @@
         model.date = date;
         [arr addObject:model];
         
-        NSLog(@"-数据库保存的条数--%ld",arr.count);
+//        NSLog(@"-数据库保存的条数--%ld",arr.count);
+        
+        NSLog(@"-%@--",date);
     }
     
     return arr;

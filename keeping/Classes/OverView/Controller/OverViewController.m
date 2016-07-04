@@ -15,6 +15,7 @@
 #import "MenuController.h"
 #import "TextController.h"
 #import "overViewItemModel.h"
+#import "FMData.h"
 
 
 @interface OverViewController ()<UITableViewDelegate,UITableViewDataSource,UICollectionViewDataSource,UICollectionViewDelegate,VTMagicViewDelegate,VTMagicViewDataSource>
@@ -84,9 +85,24 @@ NSString* nCell = @"cell";
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
+    [self reloadData];
+}
+
+-(void)reloadData{
+    NSLog(@"%@",self.datas);
+    
+    [self.datas removeAllObjects];
+    self.detailView.rightCount = 0;
+    for (overViewItemModel* model in [FMData selectData]) {
+        if (model.isComplete == 0) {
+            self.detailView.rightCount ++;
+        }
+        [self.datas addObject:model];
+    }
+    
     [self.tableView reloadData];
     
-    NSLog(@"%@",self.datas);
+    self.detailView.leftCount = self.datas.count;
 }
 
 - (VTMagicController *)magicController
@@ -240,7 +256,7 @@ NSString* nCell = @"cell";
         [self.navigationController pushViewController:[[TextController alloc]init] animated:NO];
         
         CATransition* transition = [CATransition animation];
-        transition.duration = 1;
+        transition.duration = 0.5;
         transition.type = @"cube";
         transition.subtype = @"fromRight";
         [self.navigationController.view.layer addAnimation:transition forKey:nil];
@@ -253,7 +269,7 @@ NSString* nCell = @"cell";
         NSLog(@"向下激发手势");
         
         CATransition* transition = [CATransition animation];
-        transition.duration = 0.8;
+        transition.duration = 0.5;
         transition.type = @"cube";
         transition.subtype = @"fromTop";
         
@@ -273,7 +289,7 @@ NSString* nCell = @"cell";
         NSLog(@"向上激发手势");
         
         CATransition* transition = [CATransition animation];
-        transition.duration = 0.8;
+        transition.duration = 0.5;
         transition.type = @"cube";
         transition.subtype = @"fromBottom";
         
@@ -329,7 +345,7 @@ NSString* nCell = @"cell";
     cell.massageLabel.text = model.massage;
     cell.timeLabel.text = model.timeStr;
     cell.shiduanLabel.text = model.shiduan;
-    if (model.isComplete) {
+    if (!model.isComplete) {
         cell.img.image = [UIImage imageNamed:@"completed_background"];
     }else{
         cell.img.image = [UIImage imageNamed:@"overdue"];
@@ -337,6 +353,22 @@ NSString* nCell = @"cell";
     
     return cell;
 }
+
+
+-(NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    overViewItemModel* model = self.datas[indexPath.row];
+    
+    UITableViewRowAction* action = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"complete" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+        model.isComplete = 1;
+        [FMData updateData:model];
+        
+        [self reloadData];
+    }];
+    action.backgroundColor = kCOLOR_RGB(80, 210, 194);
+    return @[action];
+}
+
 
 -(NSArray<NSString *> *)menuTitlesForMagicView:(VTMagicView *)magicView{
     return @[@"DAY",@"WEEK",@"MONTH"];

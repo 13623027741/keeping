@@ -67,7 +67,7 @@
     [[leftButton rac_signalForControlEvents:UIControlEventTouchUpInside]
     subscribeNext:^(id x) {
         CATransition* transition = [CATransition animation];
-        transition.duration = 0.8;
+        transition.duration = 0.5;
         transition.type = @"cube";
         transition.subtype = @"fromLeft";
         [self.navigationController.view.layer addAnimation:transition forKey:nil];
@@ -88,7 +88,7 @@
     subscribeNext:^(id x) {
         
         CATransition* transition = [CATransition animation];
-        transition.duration = 0.8;
+        transition.duration = 0.5;
         transition.type = @"cube";
         transition.subtype = @"fromLeft";
         [self.navigationController.view.layer addAnimation:transition forKey:nil];
@@ -98,11 +98,11 @@
         overViewItemModel* model = [[overViewItemModel alloc]init];
         model.title = self.titleField.text;
         model.massage = self.textView.text;
-        model.isComplete = NO;
+        model.isComplete = 0;
         model.timeStr = self.selectedTime.titleLabel.text;
         model.shiduan = self.currentDate;
         model.date = [overViewItemModel getNewDate];
-        
+        NSLog(@"---[%@]---%@---",[overViewItemModel getNewDate],model.shiduan);
         [FMData insertData:model];
         
     }];
