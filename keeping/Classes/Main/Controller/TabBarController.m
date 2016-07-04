@@ -16,6 +16,7 @@
 #import "ProfileController.h"
 #import "TimelineController.h"
 #import "FebruaryController.h"
+#import "MainController.h"
 
 @interface TabBarController ()
 
@@ -25,13 +26,23 @@
 
 -(instancetype)init{
     if (self == [super init]) {
-        self.viewControllers = @[
-                                 [HomeController getHomeObject],
-                                 [OverViewController getOverViewObject],
-                                 [GroupsController getGroupsObject],
-                                 [ProfileController getProfileObject],
-                                 [TimelineController getTimelineObject],
-                                 ];
+        
+        MainController* home = [[MainController alloc]initWithRootViewController:[HomeController getHomeObject]];
+        MainController* overView = [[MainController alloc]initWithRootViewController:[OverViewController getOverViewObject]];
+        MainController* groups = [[MainController alloc]initWithRootViewController:[GroupsController getGroupsObject]];
+        MainController* Profile = [[MainController alloc]initWithRootViewController:[ProfileController getProfileObject]];
+        MainController* timeline = [[MainController alloc]initWithRootViewController:[TimelineController getTimelineObject]];
+        
+        
+        self.viewControllers = @[home,overView,groups,Profile,timeline];
+        
+//        self.viewControllers = @[
+//                                 [HomeController getHomeObject],
+//                                 [OverViewController getOverViewObject],
+//                                 [GroupsController getGroupsObject],
+//                                 [ProfileController getProfileObject],
+//                                 [TimelineController getTimelineObject],
+//                                 ];
         
         
         self.tabBar.hidden = YES;

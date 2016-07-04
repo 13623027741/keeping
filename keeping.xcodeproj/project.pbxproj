@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B117678C1D251360009921C4 /* overViewItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B117678B1D251360009921C4 /* overViewItemModel.m */; };
+		B11767911D29FB06009921C4 /* FMData.m in Sources */ = {isa = PBXBuildFile; fileRef = B117678E1D29FB06009921C4 /* FMData.m */; };
+		B11767921D29FB06009921C4 /* HttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B11767901D29FB06009921C4 /* HttpTool.m */; };
+		B11DA7FE1D23CB800095E574 /* TextController.m in Sources */ = {isa = PBXBuildFile; fileRef = B11DA7FD1D23CB800095E574 /* TextController.m */; };
+		B11DA8011D24D5CA0095E574 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = B11DA8001D24D5CA0095E574 /* MainController.m */; };
 		B129DD651D18D9C0007A08C6 /* CardScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = B129DD641D18D9C0007A08C6 /* CardScrollView.m */; };
 		B129DD681D1917CC007A08C6 /* MyAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = B129DD671D1917CC007A08C6 /* MyAnimation.m */; };
 		B129DD7B1D192CD1007A08C6 /* FebruaryController.m in Sources */ = {isa = PBXBuildFile; fileRef = B129DD761D192CD1007A08C6 /* FebruaryController.m */; };
@@ -71,6 +76,16 @@
 		128BF03D17B45C3796A9CE80 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		29617A2C6FABF45BA840B4C8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3212F2D5023926ED082AEA33 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		B117678A1D251360009921C4 /* overViewItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = overViewItemModel.h; sourceTree = "<group>"; };
+		B117678B1D251360009921C4 /* overViewItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = overViewItemModel.m; sourceTree = "<group>"; };
+		B117678D1D29FB06009921C4 /* FMData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMData.h; sourceTree = "<group>"; };
+		B117678E1D29FB06009921C4 /* FMData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMData.m; sourceTree = "<group>"; };
+		B117678F1D29FB06009921C4 /* HttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpTool.h; sourceTree = "<group>"; };
+		B11767901D29FB06009921C4 /* HttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpTool.m; sourceTree = "<group>"; };
+		B11DA7FC1D23CB800095E574 /* TextController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextController.h; sourceTree = "<group>"; };
+		B11DA7FD1D23CB800095E574 /* TextController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextController.m; sourceTree = "<group>"; };
+		B11DA7FF1D24D5CA0095E574 /* MainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainController.h; sourceTree = "<group>"; };
+		B11DA8001D24D5CA0095E574 /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
 		B129DD631D18D9C0007A08C6 /* CardScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardScrollView.h; sourceTree = "<group>"; };
 		B129DD641D18D9C0007A08C6 /* CardScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardScrollView.m; sourceTree = "<group>"; };
 		B129DD661D1917CC007A08C6 /* MyAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAnimation.h; sourceTree = "<group>"; };
@@ -408,6 +423,8 @@
 			children = (
 				B129DD941D1CD545007A08C6 /* TabBarController.h */,
 				B129DD951D1CD545007A08C6 /* TabBarController.m */,
+				B11DA7FF1D24D5CA0095E574 /* MainController.h */,
+				B11DA8001D24D5CA0095E574 /* MainController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -487,6 +504,8 @@
 			children = (
 				B190E8AE1D13EE5D00963035 /* OverViewController.h */,
 				B190E8AF1D13EE5D00963035 /* OverViewController.m */,
+				B11DA7FC1D23CB800095E574 /* TextController.h */,
+				B11DA7FD1D23CB800095E574 /* TextController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -494,6 +513,8 @@
 		B190E83B1D0FA6A200963035 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B117678A1D251360009921C4 /* overViewItemModel.h */,
+				B117678B1D251360009921C4 /* overViewItemModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -664,6 +685,10 @@
 		B190E84D1D0FA6A200963035 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				B117678D1D29FB06009921C4 /* FMData.h */,
+				B117678E1D29FB06009921C4 /* FMData.m */,
+				B117678F1D29FB06009921C4 /* HttpTool.h */,
+				B11767901D29FB06009921C4 /* HttpTool.m */,
 				B13773781D1E2D0F007DBF80 /* Bubble */,
 			);
 			path = Tool;
@@ -956,14 +981,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B11DA7FE1D23CB800095E574 /* TextController.m in Sources */,
 				B190E8D01D17CFA500963035 /* TimelineController.m in Sources */,
 				B190E8C41D17AA8800963035 /* OverViewCell.m in Sources */,
+				B11767911D29FB06009921C4 /* FMData.m in Sources */,
 				B190E8541D0FA6A200963035 /* main.m in Sources */,
 				B190E88C1D128A7F00963035 /* GroupsController.m in Sources */,
+				B117678C1D251360009921C4 /* overViewItemModel.m in Sources */,
 				B190E8D41D17D51500963035 /* TimelineCell.m in Sources */,
 				B190E8BF1D14EC1300963035 /* nextCollectionCell.m in Sources */,
 				B190E89E1D138FF300963035 /* CreateCell.m in Sources */,
 				B129DD931D1CC750007A08C6 /* SettingController.m in Sources */,
+				B11767921D29FB06009921C4 /* HttpTool.m in Sources */,
 				B190E8A81D13A2E300963035 /* ListsController.m in Sources */,
 				B190E86D1D11071B00963035 /* SignUpCell.m in Sources */,
 				B190E85E1D0FDAB200963035 /* WSPaymentCircleView.m in Sources */,
@@ -985,6 +1014,7 @@
 				B129DD851D1A487A007A08C6 /* JinnPopMenu.m in Sources */,
 				B190E8741D11317E00963035 /* KSDatePickerAppearance.m in Sources */,
 				B190E8731D11317E00963035 /* KSDatePicker.m in Sources */,
+				B11DA8011D24D5CA0095E574 /* MainController.m in Sources */,
 				B190E8901D12936600963035 /* GroupsCell.m in Sources */,
 				B190E8821D12480700963035 /* HomeDateView.m in Sources */,
 				B190E8851D125E0800963035 /* MenuController.m in Sources */,

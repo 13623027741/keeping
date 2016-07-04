@@ -12,4 +12,6 @@
 
 +(instancetype)getOverViewObject;
 
+@property(nonatomic,strong)NSMutableArray* datas;
+
 @end

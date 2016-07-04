@@ -11,7 +11,7 @@
 
 @interface KSDatePicker : UIView
 
-@property (nonatomic, strong, readonly)KSDatePickerAppearance* appearance;
+@property (nonatomic, strong)KSDatePickerAppearance* appearance;
 
 - (void)reloadAppearance;
 

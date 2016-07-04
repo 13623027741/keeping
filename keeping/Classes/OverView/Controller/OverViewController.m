@@ -13,6 +13,9 @@
 #import "nextCollectionCell.h"
 #import "OverViewCell.h"
 #import "MenuController.h"
+#import "TextController.h"
+#import "overViewItemModel.h"
+
 
 @interface OverViewController ()<UITableViewDelegate,UITableViewDataSource,UICollectionViewDataSource,UICollectionViewDelegate,VTMagicViewDelegate,VTMagicViewDataSource>
 
@@ -56,6 +59,7 @@ NSString* nCell = @"cell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.datas = [NSMutableArray array];
     
     self.lists = @[@"January",
                @"February",
@@ -75,6 +79,14 @@ NSString* nCell = @"cell";
     [self addAutolayout];
     
     [self addTarger];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    [self.tableView reloadData];
+    
+    NSLog(@"%@",self.datas);
 }
 
 - (VTMagicController *)magicController
@@ -212,7 +224,28 @@ NSString* nCell = @"cell";
         @strongify(self);
         MenuController* menu = kBOUNDLE_SOURCE(@"MenuController");
         [self pushViewController:menu button:self.menuButton];
+        
+        
     }];
+    
+    [[self.addButton rac_signalForControlEvents:UIControlEventTouchUpInside]
+    subscribeNext:^(id x) {
+        NSLog(@"添加");
+        
+//        [self presentViewController:[[TextController alloc]init] animated:YES completion:nil];
+        
+//        [self.navigationController pushViewController:[[TextController alloc]init] animated:YES];
+        
+        
+        [self.navigationController pushViewController:[[TextController alloc]init] animated:NO];
+        
+        CATransition* transition = [CATransition animation];
+        transition.duration = 1;
+        transition.type = @"cube";
+        transition.subtype = @"fromRight";
+        [self.navigationController.view.layer addAnimation:transition forKey:nil];
+    }];
+    
     
     UISwipeGestureRecognizer* swipe = [[UISwipeGestureRecognizer alloc]init];
     swipe.direction = UISwipeGestureRecognizerDirectionUp;
@@ -276,7 +309,7 @@ NSString* nCell = @"cell";
 #pragma mark - 代理
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 5;
+    return self.datas.count;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -288,6 +321,18 @@ NSString* nCell = @"cell";
     
     if (!cell) {
         cell = [[[NSBundle mainBundle]loadNibNamed:@"OverViewCell" owner:nil options:nil]lastObject];
+    }
+    
+    overViewItemModel* model = self.datas[indexPath.row];
+    
+    cell.titleLabel.text = model.title;
+    cell.massageLabel.text = model.massage;
+    cell.timeLabel.text = model.timeStr;
+    cell.shiduanLabel.text = model.shiduan;
+    if (model.isComplete) {
+        cell.img.image = [UIImage imageNamed:@"completed_background"];
+    }else{
+        cell.img.image = [UIImage imageNamed:@"overdue"];
     }
     
     return cell;
@@ -306,9 +351,8 @@ NSString* nCell = @"cell";
 }
 
 - (UIViewController *)magicView:(VTMagicView *)magicView viewControllerAtPage:(NSUInteger)pageIndex{
-    UIViewController* vc = [[UIViewController alloc]init];
     
-//    vc.view.backgroundColor = [UIColor greenColor];
+    UIViewController* vc = [[UIViewController alloc]init];
     return vc;
 }
 
@@ -326,10 +370,19 @@ NSString* nCell = @"cell";
         cell = [[[NSBundle mainBundle]loadNibNamed:@"nextCollectionCell" owner:nil options:nil]lastObject];
     }
     
+    
+    
     cell.title.text = self.lists[indexPath.row];
     return cell;
 }
 
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+
+    if ([scrollView isKindOfClass:[UICollectionView class]]) {
+        CGFloat num = scrollView.contentOffset.x / kSCREEN_SIZE.width;
+        NSLog(@"%g",num);
+    }
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

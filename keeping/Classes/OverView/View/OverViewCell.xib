@@ -34,12 +34,8 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moblie App" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DrN-9l-A9E">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Moblie App" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DrN-9l-A9E">
                         <rect key="frame" x="114" y="38" width="150" height="30"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="150" id="B7T-Dc-6Cg"/>
-                            <constraint firstAttribute="height" constant="30" id="W9o-lA-JQn"/>
-                        </constraints>
                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                         <color key="textColor" red="0.57647058819999997" green="0.57647058819999997" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -64,16 +60,21 @@
                 <constraints>
                     <constraint firstAttribute="trailingMargin" secondItem="pCt-Ua-sXc" secondAttribute="trailing" constant="5" id="0fC-Vl-Ip3"/>
                     <constraint firstItem="HvN-Yo-42W" firstAttribute="top" secondItem="NzB-Zd-COX" secondAttribute="topMargin" constant="17" id="5vR-Xr-Fgd"/>
-                    <constraint firstItem="DrN-9l-A9E" firstAttribute="top" secondItem="8NW-qC-kTF" secondAttribute="bottom" id="6lj-fZ-baD"/>
                     <constraint firstItem="8NW-qC-kTF" firstAttribute="leading" secondItem="HvN-Yo-42W" secondAttribute="trailing" constant="21" id="U4v-kJ-fdW"/>
                     <constraint firstItem="pCt-Ua-sXc" firstAttribute="top" secondItem="NzB-Zd-COX" secondAttribute="topMargin" constant="10" id="Um7-ON-0nH"/>
                     <constraint firstItem="HvN-Yo-42W" firstAttribute="leading" secondItem="lGX-y5-qtj" secondAttribute="trailing" id="d3H-bh-yAO"/>
                     <constraint firstItem="lGX-y5-qtj" firstAttribute="leading" secondItem="NzB-Zd-COX" secondAttribute="leadingMargin" constant="5" id="ebw-Jm-kRW"/>
                     <constraint firstItem="8NW-qC-kTF" firstAttribute="top" secondItem="NzB-Zd-COX" secondAttribute="topMargin" id="knr-xW-FJQ"/>
-                    <constraint firstItem="DrN-9l-A9E" firstAttribute="leading" secondItem="8NW-qC-kTF" secondAttribute="leading" id="pGu-Ee-X7S"/>
                     <constraint firstItem="lGX-y5-qtj" firstAttribute="top" secondItem="NzB-Zd-COX" secondAttribute="topMargin" constant="10" id="qOs-nh-b0R"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="img" destination="pCt-Ua-sXc" id="06G-6V-cwb"/>
+                <outlet property="massageLabel" destination="DrN-9l-A9E" id="DcY-WM-PDj"/>
+                <outlet property="shiduanLabel" destination="HvN-Yo-42W" id="N0y-Kb-OQQ"/>
+                <outlet property="timeLabel" destination="lGX-y5-qtj" id="Qzs-2y-6S4"/>
+                <outlet property="titleLabel" destination="8NW-qC-kTF" id="sUR-2n-ALu"/>
+            </connections>
             <point key="canvasLocation" x="389" y="317"/>
         </tableViewCell>
     </objects>
