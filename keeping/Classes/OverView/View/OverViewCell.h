@@ -10,4 +10,14 @@
 
 @interface OverViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *shiduanLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *massageLabel;
+
+@property (weak, nonatomic) IBOutlet UIImageView *img;
+
 @end

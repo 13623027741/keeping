@@ -19,6 +19,7 @@
 #import "GroupsController.h"
 #import "ProfileController.h"
 
+#import "FMData.h"
 /*
  [HomeController getHomeObject],           0
  [FebruaryController getxCalendarObject],  1
@@ -52,6 +53,8 @@
         [[NSUserDefaults standardUserDefaults]setObject:@"admin" forKey:@"userName"];
         [[NSUserDefaults standardUserDefaults]setObject:@"admin" forKey:@"passWord"];
         [[NSUserDefaults standardUserDefaults]synchronize];
+        
+        [FMData createTable];
     }
     
     return YES;
