@@ -15,6 +15,8 @@
 #import "FebruaryTool.h"
 #import "MenuController.h"
 #import "LZBBubbleTransition.h"
+#import "FMData.h"
+
 
 @interface FebruaryController ()<UITableViewDelegate,UITableViewDataSource,UICollectionViewDelegate,UICollectionViewDataSource,JinnPopMenuDelegate>
 
@@ -111,13 +113,19 @@ int i = 1;
     [FebruaryTool getWeekWithDay];
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    
+}
+
 -(void)addSubView{
     self.menuButton = [[UIButton alloc]init];
     [self.menuButton setImage:[UIImage imageNamed:@"menu"] forState:UIControlStateNormal];
     [self.view addSubview:self.menuButton];
     
     self.titleLabel = [[UILabel alloc]init];
-    self.titleLabel.text = @"February";
+    self.titleLabel.text = self.month[[FebruaryTool getCurrentMonth] - 1];
     self.titleLabel.font = kFONT(15);
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:self.titleLabel];
@@ -241,23 +249,27 @@ int i = 1;
     }];
     
     
-    UISwipeGestureRecognizer* swipe = [[UISwipeGestureRecognizer alloc]init];
-    swipe.direction = UISwipeGestureRecognizerDirectionDown;
-    [swipe.rac_gestureSignal subscribeNext:^(id x) {
-        NSLog(@"激发手势");
+    UISwipeGestureRecognizer* swipe1 = [[UISwipeGestureRecognizer alloc]init];
+    swipe1.direction = UISwipeGestureRecognizerDirectionDown;
+    [swipe1.rac_gestureSignal subscribeNext:^(id x) {
+        NSLog(@"向上激发手势");
+
+        
         
         CATransition* transition = [CATransition animation];
-        transition.duration = 0.8;
+        transition.duration = 0.5;
         transition.type = @"cube";
         transition.subtype = @"fromBottom";
-        
-        self.tabBarController.selectedIndex = 0;
-        
+
+        [self.navigationController popViewControllerAnimated:YES];
+
         [self.tabBarController.view.layer addAnimation:transition forKey:nil];
-        
-        
+
+
     }];
-    [self.view addGestureRecognizer:swipe];
+    
+    [self.view addGestureRecognizer:swipe1];
+    
 }
 
 
@@ -294,20 +306,20 @@ int i = 1;
         cell = [[[NSBundle mainBundle]loadNibNamed:@"CalendarCell" owner:nil options:nil]lastObject];
     }
     
-    if (indexPath.row == self.CurrentDay) {
-        cell.backgroundColor = kCOLOR_RGB(80, 210, 194);
-    }else{
-        cell.backgroundColor = [UIColor clearColor];
-    }
     
     
     if (self.currentWeekDay <= indexPath.row) {
         if ((indexPath.row - self.currentWeekDay) < self.dayCount) {
             cell.titleLabel.text = [NSString stringWithFormat:@"%d",i];
-            cell.imgView.alpha = 1;
             i ++;
         }
         
+    }
+
+    if (indexPath.row == self.CurrentDay && ![cell.titleLabel.text isEqualToString:@""]) {
+        cell.backgroundColor = kCOLOR_RGB(80, 210, 194);
+    }else{
+        cell.backgroundColor = [UIColor clearColor];
     }
     
     return cell;
