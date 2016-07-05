@@ -12,6 +12,8 @@
 #import "MenuController.h"
 #import "LZBBubbleTransition.h"
 #import "FebruaryTool.h"
+#import "FebruaryController.h"
+
 
 @interface HomeController ()
 
@@ -208,7 +210,9 @@
         transition.type = @"cube";
         transition.subtype = @"fromTop";
         
-        self.tabBarController.selectedIndex = 1;
+//        self.tabBarController.selectedIndex = 1;
+        
+        [self.navigationController pushViewController:[FebruaryController getxCalendarObject] animated:NO];
         
         [self.tabBarController.view.layer addAnimation:transition forKey:nil];
         
@@ -218,24 +222,24 @@
     [self.view addGestureRecognizer:swipe];
     
     
-    UISwipeGestureRecognizer* swipe1 = [[UISwipeGestureRecognizer alloc]init];
-    swipe1.direction = UISwipeGestureRecognizerDirectionDown;
-    [swipe1.rac_gestureSignal subscribeNext:^(id x) {
-        NSLog(@"向上激发手势");
-        
-        CATransition* transition = [CATransition animation];
-        transition.duration = 0.5;
-        transition.type = @"cube";
-        transition.subtype = @"fromBottom";
-        
-        self.tabBarController.selectedIndex = 4;
-        
-        [self.tabBarController.view.layer addAnimation:transition forKey:nil];
-        
-        
-    }];
-    
-    [self.view addGestureRecognizer:swipe1];
+//    UISwipeGestureRecognizer* swipe1 = [[UISwipeGestureRecognizer alloc]init];
+//    swipe1.direction = UISwipeGestureRecognizerDirectionDown;
+//    [swipe1.rac_gestureSignal subscribeNext:^(id x) {
+//        NSLog(@"向上激发手势");
+//        
+//        CATransition* transition = [CATransition animation];
+//        transition.duration = 0.5;
+//        transition.type = @"cube";
+//        transition.subtype = @"fromBottom";
+//        
+//        self.tabBarController.selectedIndex = 4;
+//        
+//        [self.tabBarController.view.layer addAnimation:transition forKey:nil];
+//        
+//        
+//    }];
+//    
+//    [self.view addGestureRecognizer:swipe1];
 }
 
 -(void)checkMassage{
