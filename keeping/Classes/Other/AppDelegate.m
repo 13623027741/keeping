@@ -9,27 +9,10 @@
 #import "AppDelegate.h"
 #import "WalkthroughViewController.h"
 #import "TabBarController.h"
-#import "HomeController.h"
-#import "SettingController.h"
-#import "FebruaryController.h"
-#import "CreateController.h"
-#import "ListsController.h"
-#import "OverViewController.h"
-#import "TimelineController.h"
-#import "GroupsController.h"
-#import "ProfileController.h"
-
+#import "LoginController.h"
 #import "FMData.h"
-/*
- [HomeController getHomeObject],           0
- [FebruaryController getxCalendarObject],  1
- [CreateController getxCreateObject],      2
- [ListsController getxListsObject],        3
- [OverViewController getOverViewObject],   4
- [TimelineController getTimelineObject],   5
- [GroupsController getxGroupsObject],      6
- [ProfileController getProfileObject]      7
- */
+
+
 
 @interface AppDelegate ()
 
@@ -44,20 +27,52 @@
     
     
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.rootViewController = [[TabBarController alloc]init];
+    
+    [self isNewVersion];
+    
     self.window.backgroundColor = [UIColor whiteColor];
     
     [self.window makeKeyAndVisible];
     
-    if (![[NSUserDefaults standardUserDefaults]objectForKey:@"userName"]) {
-        [[NSUserDefaults standardUserDefaults]setObject:@"admin" forKey:@"userName"];
-        [[NSUserDefaults standardUserDefaults]setObject:@"admin" forKey:@"passWord"];
-        [[NSUserDefaults standardUserDefaults]synchronize];
-        
-        [FMData createTable];
-    }
+    
     
     return YES;
+}
+
+-(void)isNewVersion{
+    
+    // 1.获取当前的版本号
+    NSString *currentVersion = [NSBundle mainBundle].infoDictionary[@"CFBundleVersion"];
+    
+    NSString* lastVersion = [[NSUserDefaults standardUserDefaults]objectForKey:kVERSION];
+    
+    NSLog(@"-%@---%@-",currentVersion,lastVersion);
+    
+    if ([currentVersion isEqualToString:lastVersion]) {
+        //没有新版本
+        [self isLogin];
+        
+    }else{
+        //有新版本
+        self.window.rootViewController = [[WalkthroughViewController alloc]init];
+        [[NSUserDefaults standardUserDefaults]setObject:currentVersion forKey:kVERSION];
+    }
+    
+    if (!lastVersion) {
+        [FMData createTable];
+    }
+}
+
+-(void)isLogin{
+    
+    NSString* userName = [[NSUserDefaults standardUserDefaults]objectForKey:kUSER_NAME];
+    NSString* userPass = [[NSUserDefaults standardUserDefaults]objectForKey:kUSER_PASS];
+    if (!userName && !userPass) {
+        
+        self.window.rootViewController = [[LoginController alloc]init];
+    }else{
+        self.window.rootViewController = [[TabBarController alloc]init];
+    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
