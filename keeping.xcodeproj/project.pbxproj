@@ -10,6 +10,9 @@
 		B117678C1D251360009921C4 /* overViewItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B117678B1D251360009921C4 /* overViewItemModel.m */; };
 		B11767911D29FB06009921C4 /* FMData.m in Sources */ = {isa = PBXBuildFile; fileRef = B117678E1D29FB06009921C4 /* FMData.m */; };
 		B11767921D29FB06009921C4 /* HttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B11767901D29FB06009921C4 /* HttpTool.m */; };
+		B11D52841D2CFFF900A8A6CA /* photoView.m in Sources */ = {isa = PBXBuildFile; fileRef = B11D52831D2CFFF900A8A6CA /* photoView.m */; };
+		B11D528E1D2D0C9C00A8A6CA /* photoViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B11D528C1D2D0C9C00A8A6CA /* photoViewCell.m */; };
+		B11D528F1D2D0C9C00A8A6CA /* photoViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B11D528D1D2D0C9C00A8A6CA /* photoViewCell.xib */; };
 		B11DA7FE1D23CB800095E574 /* TextController.m in Sources */ = {isa = PBXBuildFile; fileRef = B11DA7FD1D23CB800095E574 /* TextController.m */; };
 		B11DA8011D24D5CA0095E574 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = B11DA8001D24D5CA0095E574 /* MainController.m */; };
 		B129DD651D18D9C0007A08C6 /* CardScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = B129DD641D18D9C0007A08C6 /* CardScrollView.m */; };
@@ -82,6 +85,11 @@
 		B117678E1D29FB06009921C4 /* FMData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMData.m; sourceTree = "<group>"; };
 		B117678F1D29FB06009921C4 /* HttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpTool.h; sourceTree = "<group>"; };
 		B11767901D29FB06009921C4 /* HttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpTool.m; sourceTree = "<group>"; };
+		B11D52821D2CFFF900A8A6CA /* photoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = photoView.h; sourceTree = "<group>"; };
+		B11D52831D2CFFF900A8A6CA /* photoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = photoView.m; sourceTree = "<group>"; };
+		B11D528B1D2D0C9C00A8A6CA /* photoViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = photoViewCell.h; sourceTree = "<group>"; };
+		B11D528C1D2D0C9C00A8A6CA /* photoViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = photoViewCell.m; sourceTree = "<group>"; };
+		B11D528D1D2D0C9C00A8A6CA /* photoViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = photoViewCell.xib; sourceTree = "<group>"; };
 		B11DA7FC1D23CB800095E574 /* TextController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextController.h; sourceTree = "<group>"; };
 		B11DA7FD1D23CB800095E574 /* TextController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextController.m; sourceTree = "<group>"; };
 		B11DA7FF1D24D5CA0095E574 /* MainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainController.h; sourceTree = "<group>"; };
@@ -642,6 +650,11 @@
 				B190E8701D11317E00963035 /* KSDatePicker.m */,
 				B190E8711D11317E00963035 /* KSDatePickerAppearance.h */,
 				B190E8721D11317E00963035 /* KSDatePickerAppearance.m */,
+				B11D52821D2CFFF900A8A6CA /* photoView.h */,
+				B11D52831D2CFFF900A8A6CA /* photoView.m */,
+				B11D528B1D2D0C9C00A8A6CA /* photoViewCell.h */,
+				B11D528C1D2D0C9C00A8A6CA /* photoViewCell.m */,
+				B11D528D1D2D0C9C00A8A6CA /* photoViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -915,6 +928,7 @@
 				B190E8191D0FA4A800963035 /* Assets.xcassets in Resources */,
 				B190E8D51D17D51500963035 /* TimelineCell.xib in Resources */,
 				B129DD7E1D193AF5007A08C6 /* bottomView.xib in Resources */,
+				B11D528F1D2D0C9C00A8A6CA /* photoViewCell.xib in Resources */,
 				B190E8C01D14EC1300963035 /* nextCollectionCell.xib in Resources */,
 				B190E8CD1D17CA1500963035 /* ProfileCell.xib in Resources */,
 				B190E86E1D11071B00963035 /* SignUpCell.xib in Resources */,
@@ -996,6 +1010,7 @@
 				B190E8A81D13A2E300963035 /* ListsController.m in Sources */,
 				B190E86D1D11071B00963035 /* SignUpCell.m in Sources */,
 				B190E85E1D0FDAB200963035 /* WSPaymentCircleView.m in Sources */,
+				B11D528E1D2D0C9C00A8A6CA /* photoViewCell.m in Sources */,
 				B190E8B01D13EE5D00963035 /* OverViewController.m in Sources */,
 				B190E8CC1D17CA1500963035 /* ProfileCell.m in Sources */,
 				B190E8D81D17E2B500963035 /* WalkthroughViewController.m in Sources */,
@@ -1012,6 +1027,7 @@
 				B129DD7B1D192CD1007A08C6 /* FebruaryController.m in Sources */,
 				B129DD681D1917CC007A08C6 /* MyAnimation.m in Sources */,
 				B129DD851D1A487A007A08C6 /* JinnPopMenu.m in Sources */,
+				B11D52841D2CFFF900A8A6CA /* photoView.m in Sources */,
 				B190E8741D11317E00963035 /* KSDatePickerAppearance.m in Sources */,
 				B190E8731D11317E00963035 /* KSDatePicker.m in Sources */,
 				B11DA8011D24D5CA0095E574 /* MainController.m in Sources */,

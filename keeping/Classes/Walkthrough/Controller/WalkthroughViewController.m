@@ -7,6 +7,7 @@
 #import "CardScrollView.h"
 #import "HomeController.h"
 #import "MyAnimation.h"
+#import "AppDelegate.h"
 
 @interface WalkthroughViewController ()<CardScrollViewDelegate,CardScrollViewDataSource,UIViewControllerTransitioningDelegate>
 
@@ -68,11 +69,14 @@
         
         
         
-        HomeController* home = [[HomeController alloc]init];
+//        HomeController* home = [[HomeController alloc]init];
+//        
+//        home.transitioningDelegate = self;
+//        
+//        [self presentViewController:home animated:YES completion:nil];
         
-        home.transitioningDelegate = self;
-        
-        [self presentViewController:home animated:YES completion:nil];
+        AppDelegate* app = [UIApplication sharedApplication].delegate;
+        [app isLogin];
         
     }];
 }

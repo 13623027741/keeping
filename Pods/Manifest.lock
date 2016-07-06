@@ -31,6 +31,7 @@ PODS:
   - SDWebImage (3.8.1):
     - SDWebImage/Core (= 3.8.1)
   - SDWebImage/Core (3.8.1)
+  - SVProgressHUD (2.0.3)
   - VTMagic (1.2.0):
     - VTMagic/Core (= 1.2.0)
   - VTMagic/Core (1.2.0)
@@ -44,6 +45,7 @@ DEPENDENCIES:
   - MJExtension
   - ReactiveCocoa
   - SDWebImage
+  - SVProgressHUD
   - VTMagic
 
 SPEC CHECKSUMS:
@@ -55,6 +57,7 @@ SPEC CHECKSUMS:
   MJExtension: d86aacb740c87519d20e3cca55b6fa4be6cc7548
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
+  SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
   VTMagic: 3c77d572358adfb49e754a8425d30388bb1d72b6
 
 COCOAPODS: 0.39.0

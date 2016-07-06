@@ -36,5 +36,8 @@ alpha:1.0]
 #define kSCREEN_SIZE [UIScreen mainScreen].bounds.size
 
 
+#define kVERSION @"version"
+#define kUSER_NAME @"userName"
+#define kUSER_PASS @"userPass"
 
 

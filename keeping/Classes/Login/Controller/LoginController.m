@@ -7,9 +7,7 @@
 //
 
 #import "LoginController.h"
-#import "ReactiveCocoa.h"
-#import "Masonry.h"
-#import "MBProgressHUD.h"
+#import "SVProgressHUD.h"
 #import "WSPaymentCircleView.h"
 #import "SignUpController.h"
 #import "HomeController.h"
@@ -326,28 +324,48 @@
         NSLog(@"login...username[%@].password[%@]..",self.userName.text,self.passWord.text);
         [self addAnimation];
         
-        NSString* userName = [[NSUserDefaults standardUserDefaults]objectForKey:@"userName"];
-        NSString* passWord = [[NSUserDefaults standardUserDefaults]objectForKey:@"passWord"];
+        NSString* userName = [[NSUserDefaults standardUserDefaults]objectForKey:kUSER_NAME];
+        NSString* passWord = [[NSUserDefaults standardUserDefaults]objectForKey:kUSER_PASS];
         
-        if ([self.userName.text isEqualToString:userName] && [self.passWord.text isEqualToString:passWord]) {
-            NSLog(@"登陆成功");
-            self.iconView.alpha = 0;
-            [self.circleView loadStatus:WSLoadStatusSuccess];
-            
-            TabBarController* tab = [[TabBarController alloc]init];
-             AppDelegate* app = [UIApplication sharedApplication].delegate;
-            app.window.rootViewController = tab;
-            
-        }else{
-            NSLog(@"登陆失败");
-            self.iconView.alpha = 0;
-            [self.circleView loadStatus:WSLoadStatusFailed];
-            [NSTimer scheduledTimerWithTimeInterval:2
-                                             target:self
-                                           selector:@selector(changeAlpha) userInfo:nil repeats:NO];
-        }
+        [[[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+            if (!userName && !passWord) {
+                //第一次登陆
+                [subscriber sendNext:@(YES)];
+                [subscriber sendCompleted];
+            }else if ([self.userName.text isEqualToString:userName] && [self.passWord.text isEqualToString:passWord]){
+                [subscriber sendNext:@(YES)];
+                [subscriber sendCompleted];
+            }else{
+                [subscriber sendNext:@(NO)];
+                [subscriber sendCompleted];
+            }
+            return nil;
+        }]delay:3]subscribeNext:^(NSNumber* value) {
+            if ([value boolValue]) {
+                NSLog(@"登陆成功");
+                self.iconView.alpha = 0;
+                [self.circleView loadStatus:WSLoadStatusSuccess];
+                
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    TabBarController* tab = [[TabBarController alloc]init];
+                    AppDelegate* app = [UIApplication sharedApplication].delegate;
+                    app.window.rootViewController = tab;
+                });
+                
+                [[NSUserDefaults standardUserDefaults]setObject:self.userName.text forKey:kUSER_NAME];
+                [[NSUserDefaults standardUserDefaults]setObject:self.passWord.text forKey:kUSER_PASS];
+            }else{
+                NSLog(@"登陆失败");
+                self.iconView.alpha = 0;
+                [self.circleView loadStatus:WSLoadStatusFailed];
+                [NSTimer scheduledTimerWithTimeInterval:2
+                                                 target:self
+                                               selector:@selector(changeAlpha) userInfo:nil repeats:NO];
+            }
+        }];
         
     }];
+    
     [[self.signUp rac_signalForControlEvents:UIControlEventTouchUpInside]
     subscribeNext:^(id x) {
         NSLog(@"signUp....");
