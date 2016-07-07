@@ -16,6 +16,7 @@
 
 
 #define kFONT(s) [UIFont fontWithName:@"Avenir-Book" size:s];
+#import <UIKit/UIKit.h>
 #import "ReactiveCocoa.h"
 #import "Masonry.h"
 #import "LZBBubbleTransition.h"
@@ -36,8 +37,9 @@ alpha:1.0]
 #define kSCREEN_SIZE [UIScreen mainScreen].bounds.size
 
 
-#define kVERSION @"version"
+#define kVERSION   @"version"
 #define kUSER_NAME @"userName"
 #define kUSER_PASS @"userPass"
+#define kUSER      @"user"
 
 

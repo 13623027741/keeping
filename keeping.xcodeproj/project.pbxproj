@@ -13,6 +13,8 @@
 		B11D52841D2CFFF900A8A6CA /* photoView.m in Sources */ = {isa = PBXBuildFile; fileRef = B11D52831D2CFFF900A8A6CA /* photoView.m */; };
 		B11D528E1D2D0C9C00A8A6CA /* photoViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B11D528C1D2D0C9C00A8A6CA /* photoViewCell.m */; };
 		B11D528F1D2D0C9C00A8A6CA /* photoViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B11D528D1D2D0C9C00A8A6CA /* photoViewCell.xib */; };
+		B11D52921D2DF89C00A8A6CA /* imageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B11D52911D2DF89C00A8A6CA /* imageModel.m */; };
+		B11D52981D2E316900A8A6CA /* userInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B11D52971D2E316900A8A6CA /* userInfo.m */; };
 		B11DA7FE1D23CB800095E574 /* TextController.m in Sources */ = {isa = PBXBuildFile; fileRef = B11DA7FD1D23CB800095E574 /* TextController.m */; };
 		B11DA8011D24D5CA0095E574 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = B11DA8001D24D5CA0095E574 /* MainController.m */; };
 		B129DD651D18D9C0007A08C6 /* CardScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = B129DD641D18D9C0007A08C6 /* CardScrollView.m */; };
@@ -90,6 +92,10 @@
 		B11D528B1D2D0C9C00A8A6CA /* photoViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = photoViewCell.h; sourceTree = "<group>"; };
 		B11D528C1D2D0C9C00A8A6CA /* photoViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = photoViewCell.m; sourceTree = "<group>"; };
 		B11D528D1D2D0C9C00A8A6CA /* photoViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = photoViewCell.xib; sourceTree = "<group>"; };
+		B11D52901D2DF89C00A8A6CA /* imageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imageModel.h; sourceTree = "<group>"; };
+		B11D52911D2DF89C00A8A6CA /* imageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = imageModel.m; sourceTree = "<group>"; };
+		B11D52961D2E316900A8A6CA /* userInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = userInfo.h; sourceTree = "<group>"; };
+		B11D52971D2E316900A8A6CA /* userInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = userInfo.m; sourceTree = "<group>"; };
 		B11DA7FC1D23CB800095E574 /* TextController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextController.h; sourceTree = "<group>"; };
 		B11DA7FD1D23CB800095E574 /* TextController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextController.m; sourceTree = "<group>"; };
 		B11DA7FF1D24D5CA0095E574 /* MainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainController.h; sourceTree = "<group>"; };
@@ -636,6 +642,10 @@
 		B190E8471D0FA6A200963035 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B11D52901D2DF89C00A8A6CA /* imageModel.h */,
+				B11D52911D2DF89C00A8A6CA /* imageModel.m */,
+				B11D52961D2E316900A8A6CA /* userInfo.h */,
+				B11D52971D2E316900A8A6CA /* userInfo.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1026,6 +1036,7 @@
 				B190E8521D0FA6A200963035 /* AppDelegate.m in Sources */,
 				B129DD7B1D192CD1007A08C6 /* FebruaryController.m in Sources */,
 				B129DD681D1917CC007A08C6 /* MyAnimation.m in Sources */,
+				B11D52921D2DF89C00A8A6CA /* imageModel.m in Sources */,
 				B129DD851D1A487A007A08C6 /* JinnPopMenu.m in Sources */,
 				B11D52841D2CFFF900A8A6CA /* photoView.m in Sources */,
 				B190E8741D11317E00963035 /* KSDatePickerAppearance.m in Sources */,
@@ -1034,6 +1045,7 @@
 				B190E8901D12936600963035 /* GroupsCell.m in Sources */,
 				B190E8821D12480700963035 /* HomeDateView.m in Sources */,
 				B190E8851D125E0800963035 /* MenuController.m in Sources */,
+				B11D52981D2E316900A8A6CA /* userInfo.m in Sources */,
 				B129DD811D1A341D007A08C6 /* subView.m in Sources */,
 				B190E8BB1D13F49100963035 /* CutemView.m in Sources */,
 				B190E8B81D13F42000963035 /* nextView.m in Sources */,

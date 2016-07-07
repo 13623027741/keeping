@@ -12,6 +12,8 @@
 #import "KSDatePicker.h"
 #import "photoView.h"
 #import "photoViewCell.h"
+#import "imageModel.h"
+#import "userInfo.h"
 
 #define KOriginalPhotoImagePath   \
 [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"OriginalPhotoImages"]
@@ -28,6 +30,16 @@
 
 @property(nonatomic,strong)photoView* photo;
 
+@property(nonatomic,strong)NSMutableDictionary* dic;
+//
+//@property(nonatomic,strong)NSString* userName;
+//
+//@property(nonatomic,strong)NSString* userPass;
+//
+//@property(nonatomic,strong)NSString* email;
+//
+//@property(nonatomic,strong)NSString* birthday;
+//
 @end
 static NSString* signUpcell = @"cell";
 @implementation SignUpController
@@ -37,6 +49,13 @@ static NSString* signUpcell = @"cell";
         _imagesList = [NSMutableArray array];
     }
     return _imagesList;
+}
+
+-(NSMutableDictionary *)dic{
+    if (!_dic) {
+        _dic = [NSMutableDictionary dictionary];
+    }
+    return _dic;
 }
 
 -(NSDictionary *)month{
@@ -74,8 +93,8 @@ static NSString* signUpcell = @"cell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
-    
+    @weakify(self);
+    self.addPhoto.imageView.layer.cornerRadius = 50;
     CGFloat width = (kSCREEN_SIZE.width - 8)/ 4;
     
     UICollectionViewFlowLayout* flow = [[UICollectionViewFlowLayout alloc]init];
@@ -118,12 +137,15 @@ static NSString* signUpcell = @"cell";
         UIAlertAction* action1 = [UIAlertAction actionWithTitle:@"Open" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             NSLog(@"open");
             
-            [self getAllPhotosFromSystemPhotosLibrary];
+            if (!self.imagesList.count) {
+                [self getAllPhotosFromSystemPhotosLibrary];
+            }
             
             self.photo.alpha = 1;
             
             CATransition* transition = [CATransition animation];
             transition.type = @"push";
+            transition.subtype = @"fromRight";
             transition.duration = 0.8;
             
             [self.view.layer addAnimation:transition forKey:nil];
@@ -137,7 +159,29 @@ static NSString* signUpcell = @"cell";
     
     [[self.checkButton rac_signalForControlEvents:UIControlEventTouchUpInside]
     subscribeNext:^(id x) {
+        @strongify(self);
         
+        BOOL tag = YES;
+        NSMutableArray* arr = [NSMutableArray array];
+        for (NSInteger i = 100; i < 104; i++) {
+            UITextField* textField = (UITextField*)[self.tableView viewWithTag:i];
+            if ([textField.text isEqualToString:@""]) {
+                tag = NO;
+            }else{
+                [arr addObject:textField.text];
+            }
+        }
+        if (arr.count == 4 && tag) {
+            
+            userInfo* user = [[userInfo alloc]init];
+            user.userName = arr[0];
+            user.email = arr[1];
+            user.userPass = arr[2];
+            user.date = arr[3];
+            [[NSUserDefaults standardUserDefaults]setObject:user forKey:kUSER];
+            [[NSUserDefaults standardUserDefaults]synchronize];
+            
+        }
     }];
 }
 
@@ -233,7 +277,9 @@ static NSString* signUpcell = @"cell";
         cell = [[[NSBundle mainBundle]loadNibNamed:@"photoViewCell" owner:nil options:nil]lastObject];
     }
     
-    cell.imgView.image = self.imagesList[indexPath.row];
+    imageModel* model = self.imagesList[indexPath.row];
+    
+    cell.imgView.image = model.image;
     
     return cell;
 }
@@ -241,10 +287,17 @@ static NSString* signUpcell = @"cell";
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"选中那个cell---%@--",self.imagesList[indexPath.row]);
     
-    self.photo.alpha = 0;
+    imageModel* model = self.imagesList[indexPath.row];
     
+    [self imageWithUrl:model.url withFileName:model.imageName];
+    
+    [self.addPhoto setImage:model.image forState:UIControlStateNormal];
+    self.addPhoto.layer.cornerRadius = 50;
+    
+    self.photo.alpha = 0;
     CATransition* transition = [CATransition animation];
     transition.type = @"push";
+    transition.subtype = @"fromLeft";
     transition.duration = 0.8;
     
     [self.view.layer addAnimation:transition forKey:nil];
@@ -312,13 +365,15 @@ static NSString* signUpcell = @"cell";
                     Latitude  = @"";
                 }
                 
-//                NSLog(@"longitude= %@ Latitude = %@",Longitude,Latitude);
-                
-                [self.imagesList addObject:image];
-                
                 //读取完照片之后写入APP沙河cache目录  这个方法我在网上找到的
                 
-                [self imageWithUrl:url withFileName:fileName];
+//                [self imageWithUrl:url withFileName:fileName];
+                
+                imageModel* model = [[imageModel alloc]init];
+                model.image = image;
+                model.imageName = fileName;
+                model.url = url;
+                [self.imagesList addObject:model];
                 
                 //回到主线程更新UI
                 dispatch_async(dispatch_get_main_queue(), ^{
