@@ -13,7 +13,7 @@
 #import "nextCollectionCell.h"
 #import "OverViewCell.h"
 #import "MenuController.h"
-#import "TextController.h"
+#import "CreateController.h"
 #import "overViewItemModel.h"
 #import "FMData.h"
 
@@ -248,12 +248,7 @@ NSString* nCell = @"cell";
     subscribeNext:^(id x) {
         NSLog(@"添加");
         
-//        [self presentViewController:[[TextController alloc]init] animated:YES completion:nil];
-        
-//        [self.navigationController pushViewController:[[TextController alloc]init] animated:YES];
-        
-        
-        [self.navigationController pushViewController:[[TextController alloc]init] animated:NO];
+        [self.navigationController pushViewController:[[CreateController alloc]init] animated:NO];
         
         CATransition* transition = [CATransition animation];
         transition.duration = 0.5;
