@@ -10,7 +10,8 @@
 #import "CreateController.h"
 #import "CreateCell.h"
 #import "MenuController.h"
-#
+#import "KSDatePicker.h"
+
 @interface CreateController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (strong, nonatomic)UITableView *tableView;
@@ -23,7 +24,7 @@
 
 @property(nonatomic,strong)UIButton* addButton;
 
-@property(nonatomic,strong)UIButton* addImageButton;
+@property(nonatomic,strong)UITextField* addImageButton;
 
 @property(nonatomic,strong)UILabel* dicriptionLabel;
 
@@ -34,6 +35,8 @@
 @property(nonatomic,strong)MenuController* menu;
 
 @property(nonatomic,strong)LZBBubbleTransition* transition;
+
+@property(nonatomic,strong)KSDatePicker* datePicker;
 
 @end
 static NSString* CCell = @"cell";
@@ -61,6 +64,8 @@ static NSString* CCell = @"cell";
 
 -(void)addSubView{
     
+    self.datePicker = [[KSDatePicker alloc]initWithFrame:CGRectMake(0, 0, 300, 200)];
+    
     self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, 0, 0) style:UITableViewStylePlain];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -86,10 +91,12 @@ static NSString* CCell = @"cell";
     self.addImageView.backgroundColor = [UIColor colorWithRed:248/255.0 green:248/255.0 blue:249/255.0 alpha:1];
     [self.view addSubview:self.addImageView];
     
-    self.addImageButton = [[UIButton alloc]init];
-    [self.addImageButton setTitle:@"Add Title" forState:UIControlStateNormal];
-    [self.addImageButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    self.addImageButton.titleLabel.font = kFONT(25);
+    self.addImageButton = [[UITextField alloc]init];
+    self.addImageButton.font = kFONT(25);
+    self.addImageButton.textColor = [UIColor blackColor];
+    self.addImageButton.textAlignment = NSTextAlignmentCenter;
+    self.addImageButton.borderStyle = UITextBorderStyleNone;
+    self.addImageButton.placeholder = @"Add Title";
     [self.view addSubview:self.addImageButton];
     
     self.dicriptionLabel = [[UILabel alloc]init];
@@ -135,7 +142,7 @@ static NSString* CCell = @"cell";
     
     [self.addImageButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(self.view.mas_centerX);
-        make.width.mas_equalTo(@200);
+        make.width.mas_equalTo(@300);
         make.height.mas_equalTo(@50);
         make.centerY.mas_equalTo(self.addImageView.mas_centerY).offset(-10);
     }];
@@ -206,13 +213,72 @@ static NSString* CCell = @"cell";
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    @weakify(self);
     CreateCell* cell = [tableView dequeueReusableCellWithIdentifier:CCell forIndexPath:indexPath];
     
     if (!cell) {
         cell = [[[NSBundle mainBundle]loadNibNamed:@"CreateCell" owner:nil options:nil]lastObject];
     }
-    cell.title.text = @"Date";
+    if (indexPath.row == 0) {
+        cell.title.text = @"Date";
+        cell.massage.text = @"";
+        [[[cell.button rac_signalForControlEvents:UIControlEventTouchUpInside]
+        throttle:0.3]
+        subscribeNext:^(id x) {
+            @strongify(self);
+            self.datePicker.appearance.datePickerMode = UIDatePickerModeDateAndTime;
+            [self.datePicker show];
+            self.datePicker.appearance.resultCallBack = ^(KSDatePicker* datePicker,NSDate* currentDate,KSDatePickerButtonType buttonType){
+                if (buttonType == KSDatePickerButtonCommit) {
+                    NSLog(@"%@",currentDate);
+                }
+            };
+        }];
+    }else if (indexPath.row == 1){
+        cell.title.text = @"Time";
+        cell.massage.text = @"";
+        
+        
+        
+    }else if (indexPath.row == 2){
+        cell.title.text = @"Location";
+        cell.massage.text = @"";
+    }else if (indexPath.row == 3){
+        cell.title.text = @"Repeat";
+        cell.massage.text = @"";
+    }
     
     return cell;
 }
+
+/**
+ *  取得自定义的时间字符串
+ */
+-(NSString*)getCustemDateWithDate:(NSDate*)date{
+    
+    NSDictionary* m = @{@"01":@"January",
+                   @"02":@"February",
+                   @"03":@"March",
+                   @"04":@"April",
+                   @"05":@"May",
+                   @"06":@"June",
+                   @"07":@"July",
+                   @"08":@"August",
+                   @"09":@"September",
+                   @"10":@"October",
+                   @"11":@"November",
+                   @"12":@"December"};
+    
+    NSDateFormatter* formatter = [[NSDateFormatter alloc]init];
+    formatter.dateFormat = @"MM";
+    NSString* dateStr = [formatter stringFromDate:date];
+    
+    NSString* key = [dateStr substringWithRange:NSMakeRange(0, 2)];
+    
+    NSString* month = [m objectForKey:key];
+    
+    formatter.dateFormat = @"dd,yyyy";
+    return [NSString stringWithFormat:@"%@ %@",month,[formatter stringFromDate:date]];
+}
+
 @end
